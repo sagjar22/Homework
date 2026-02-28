@@ -1,0 +1,37 @@
+.gallery {
+    width: 700px;
+    margin: 40px auto;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.big-image {
+    margin-bottom: 20px;
+}
+
+iframe {
+    display: block;
+    margin: 20px auto;
+    width: 37%;
+    height: 300px;
+    border: 3px solid #ccc;
+}
+
+.thumbnails img {
+    width: 80px;
+    margin: 5px;
+    border: 2px solid #ccc;
+    padding: 3px;
+    background-color: white;
+}
+
+.thumbnails img:hover {
+    border: 2px solid #888;
+}
