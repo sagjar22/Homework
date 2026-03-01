@@ -1,0 +1,22 @@
+.progress-container {
+    width: 600px;
+    height: 70px;
+    border: 4px solid orange;
+    margin: 40px auto;
+}
+
+.progress-bar {
+    width: 120px;
+    height: 100%;
+    background-color: orange;
+    animation: progress-bar-move 3s linear infinite;
+}
+
+@keyframes progress-bar-move {
+    0% {
+        transform: translate(-10px,0);
+    }
+    100% {
+        transform: translate(470px,0);  
+    }
+}
