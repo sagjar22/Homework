@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    background-color: white;
+}
+
 .progress-container {
     width: 600px;
     height: 70px;
@@ -14,9 +19,123 @@
 
 @keyframes progress-bar-move {
     0% {
-        transform: translate(-10px,0);
+        transform: translate(-10px, 0);
     }
+
     100% {
-        transform: translate(470px,0);  
+        transform: translate(470px, 0);
+    }
+}
+
+.live-icon {
+    text-align: center;
+    margin-top: 70px;
+}
+
+.live-icon img {
+    width: 120px;
+    filter: grayscale(100%);
+}
+
+.live-icon img:hover {
+    transform: scale(2);
+    filter: grayscale(0%);
+    transition: all 5s linear;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.icons {
+    margin-top: 150px;
+    text-align: center;
+}
+
+.icon {
+    width: 150px;
+    margin: 0 30px;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+.big {
+    width: 180px;
+}
+
+.i1 {
+    animation-name: anim1;
+    animation-delay: 0s;
+}
+
+.i2 {
+    animation-name: anim2;
+    animation-delay: 0.5s;
+}
+
+.i3 {
+    animation-name: anim3;
+    animation-delay: 1s;
+}
+
+.i4 {
+    animation-name: anim4;
+    animation-delay: 1.5s;
+}
+
+.i5 {
+    animation-name: anim5;
+    animation-delay: 2s;
+}
+
+@keyframes anim1 {
+    0% {
+        transform: translateY(500px) rotate(-25deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(-25deg);
+    }
+}
+
+@keyframes anim2 {
+    0% {
+        transform: translateY(500px) rotate(-10deg);
+    }
+
+    100% {
+        transform: translateY(-60px) rotate(-10deg);
+    }
+}
+
+@keyframes anim3 {
+    0% {
+        transform: translateY(500px) rotate(10deg);
+    }
+
+    100% {
+        transform: translateY(-60px) rotate(10deg);
+    }
+}
+
+@keyframes anim4 {
+    0% {
+        transform: translateY(500px) rotate(25deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(25deg);
+    }
+}
+
+@keyframes anim5 {
+    0% {
+        transform: translateY(500px) rotate(90deg);
+    }
+
+    100% {
+        transform: translateY(40px) rotate(90deg);
     }
 }
