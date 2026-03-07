@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+footer {
+    background: #355a78;
+    padding: 40px 0;
+    color: white;
+}
+
+.footer-container {
+    width: 800px;
+    margin: auto;
+}
+
+.footer-menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    list-style: none;
+    /* list-style none прибирає стандартні маркери списку наприклад •*/
+    padding: 0;
+}
+
+.column li {
+    margin: 6px 0;
+}
+
+.column a {
+    color: white;
+    text-decoration: none;
+}
+
+.column a:hover {
+    text-decoration: underline;
+}
+
+.social {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.icon {
+    width: 35px;
+    height: 35px;
+    background-size: cover;
+}
+
+.facebook {
+    background-image: url("../shared_resources/icon/fb_gray.png");
+}
+
+.instagram {
+    background-image: url("../shared_resources/icon/insta_gray.png");
+}
+
+.youtube {
+    background-image: url("../shared_resources/icon/youtube_gray.png");
+}
+
+.facebook:hover {
+    background-image: url("../shared_resources/icon/fb.png");
+}
+
+.instagram:hover {
+    background-image: url("../shared_resources/icon/insta.png");
+}
+
+.youtube:hover {
+    background-image: url("../shared_resources/icon/youtube.png");
+}
+
+.line {
+    border-top: 1px solid #9cc3dd;
+    margin: 25px 0;
+}
+
+.copyright {
+    text-align: center;
+    font-size: 12px;
+}
