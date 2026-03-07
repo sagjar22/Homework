@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 30px;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap; /* з допомогою flex-wrap: wrap; або гнучке обертання дозволяє переноситися елементам на новий рядок якщо не вистачає місця*/
+    justify-content: center; /* з допомогою justify-content: center; або  вирівнування вмісту - вирівнює всі елементи по центру рядка*/
+    gap: 20px; /* з допомогою gap: 20px; або розрив робить відстань 20 пікселів між усіма блоками*/
+    max-width: 1000px;
+    margin: auto;
+}
+
+.product {
+    width: 120px;
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.product img {
+    width: 70px;
+    height: 70px;
+}
+
+.name {
+    margin-top: 10px;
+}
+
+.footer {
+    margin-top: 30px;
+    color: black;
+}
