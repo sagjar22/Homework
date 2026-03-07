@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    width: 900px;
+    margin: 20px auto;
+}
+
+header {
+    background: #8c2d4d;
+    color: white;
+    padding: 20px;
+}
+
+nav {
+    background: #6f0f2f;
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.left {
+    float: left;
+    width: 20%;
+}
+
+.left aside {
+    background: #b55a7a;
+    color: white;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.left aside:last-child {
+    padding-bottom: 60px;
+}
+
+main {
+    float: left;
+    width: 50%;
+    background: #b55a7a;
+    margin: 10px;
+    color: white;
+    padding: 20px;
+}
+
+.section {
+    background: #d48aa3;
+    padding: 20px;
+    margin-top: 15px;
+}
+
+.right {
+    float: right;
+    width: 15%;
+    background: #b55a7a;
+    color: white;
+    margin-top: 10px;
+    padding: 50px 5px;
+    text-align: center;
+    text-orientation: upright;
+    /*  text-orientation upright робить орієнтацію тексту вертикальною ф*/
+    writing-mode: vertical-rl;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    float: left;
+    width: 100%;
+    background: #6f0f2f;
+    color: white;
+    padding: 15px;
+    margin-top: 10px;
+}
