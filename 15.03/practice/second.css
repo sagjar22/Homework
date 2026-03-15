@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+    font-family: Arial;
+}
+
+.menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 80px;
+    height: 100vh;
+    background: #8f8f8f;
+    transition: 1s;
+    overflow: hidden;
+}
+
+.menu:hover {
+    width: 220px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 15px;
+}
+
+ul li:hover {
+    background: #6f6f6f;
+}
+
+ul li img {
+    width: 50px;
+    margin-right: 15px;
+}
+
+.menu:hover ul li span {
+    opacity: 1;
+}
+
+.content {
+    margin-left: 80px;
+    padding: 30px;
+}
