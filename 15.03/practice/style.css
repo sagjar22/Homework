@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+    text-align: center;
+}
+
+.products {
+    width: 700px;
+    margin: auto;
+}
+
+.card {
+    float: left;
+    width: 200px;
+    border: solid black 1px;
+    margin: 10px;
+    padding: 15px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.card img {
+    width: 100px;
+    display: block;
+    margin: auto;
+}
+
+.price {
+    color: red;
+    font-weight: bold;
+}
+
+.button {
+    padding: 8px 15px;
+    background: #12335C;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: #0c233f;
+}
