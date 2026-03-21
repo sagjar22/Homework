@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 20px auto;
+    width: 1000px;
+    text-align: center;
+    border: 2px solid #949493;
+}
+
+th,
+td {
+    border: 1px solid #949493;
+    padding: 8px;
+    font-size: 14px;
+}
+
+.small-col {
+    width: 40px;
+}
+
+.sign {
+    font-weight: bold;
+    background: #f3e2a0;
+}
+
+.aspect {
+    background: #f3e2a0;
+}
+
+.simple {
+    background: #b9b7d6;
+}
+
+.progressive {
+    background: #e4a6a6;
+}
+
+.perfect {
+    background: #9fd3b0;
+}
+
+.perfect-progressive {
+    background: #d6a6d6;
+}
+
+.row-title {
+    background: #f3e2a0;
+}
+
+.meaning {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.period-title {
+    font-style: italic;
+    font-weight: bold;
+    text-align: left;
+}
+
+.period-text {
+    text-align: left;
+    font-style: italic;
+    font-size: 12px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+thead th {
+    font-size: 16px;
+}

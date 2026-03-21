@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <table>
+
+        <thead>
+            <tr>
+                <th class="aspect" colspan="2">ASPECT</th>
+                <th class="simple">SIMPLE</th>
+                <th class="progressive">PROGRESSIVE</th>
+                <th class="perfect">PERFECT</th>
+                <th class="perfect-progressive">PERFECT PROGRESSIVE</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <!-- rowspan — об'єднує комірку по вертикалі на кілька рядків -- одна комірка займає кілька рядків вниз. -->
+                <td class="row-title meaning" colspan="2" rowspan="2">MEANING</td>
+                <td class="simple italic">a common aspect</td>
+                <td class="progressive italic">a process</td>
+                <td class="perfect italic">priority</td>
+                <td class="perfect-progressive italic">priority + process</td>
+            </tr>
+
+            <tr>
+                <td class="simple bold">When?</td>
+                <td class="progressive bold">At what time?</td>
+                <td class="perfect bold">By what time?</td>
+                <td class="perfect-progressive bold">Since what time?<br>How long?</td>
+            </tr>
+
+            <tr>
+                <!-- colspan — об'єднує комірку по горизонталі на кілька колонок - одна комірка займає кілька стовпців вправо. -->
+                <td class="row-title period-title" colspan="2">Period of time</td>
+                <td class="simple period-text">usually, often, always, seldom,<br>every day (week, month, year)</td>
+                <td class="progressive period-text">now, at the moment</td>
+                <td class="perfect period-text">ever, never, just, already,<br>not yet, by 3 p.m.</td>
+                <td class="perfect-progressive period-text">since 3 p.m., for a long time,<br>for a month</td>
+            </tr>
+
+            <tr>
+                <td class="row-title" rowspan="3">Present</td>
+                <td class="small-col sign">+</td>
+                <td class="simple">V/Vs</td>
+                <td class="progressive">am/is/are + Ving</td>
+                <td class="perfect">have/has + Ved/V₃</td>
+                <td class="perfect-progressive">have/has + been + Ving</td>
+            </tr>
+
+            <tr>
+                <td class="small-col sign">?</td>
+                <td class="simple">do/does + V</td>
+                <td class="progressive">inversion</td>
+                <td class="perfect">inversion</td>
+                <td class="perfect-progressive">inversion</td>
+            </tr>
+
+            <tr>
+                <td class="small-col sign">-</td>
+                <td class="simple">do/does + not + V</td>
+                <td class="progressive">am/is/are + not + Ving</td>
+                <td class="perfect">have/has + not + Ved/V₃</td>
+                <td class="perfect-progressive">have/has + not + been + Ving</td>
+            </tr>
+
+            <tr>
+                <td class="row-title period-title" colspan="2">Period of time</td>
+                <td class="simple period-text">yesterday, last week (month,<br>year), long ago</td>
+                <td class="progressive period-text">yesterday at 3 p.m., yesterday<br>from 6 till 7, when you came</td>
+                <td class="perfect period-text">yesterday by 3 p.m., before<br>some time in the past</td>
+                <td class="perfect-progressive period-text">yesterday since 3 p.m., for<br>some time in the past</td>
+            </tr>
+
+            <tr>
+                <td class="row-title" rowspan="3">Past</td>
+                <td class="small-col sign">+</td>
+                <td class="simple">Ved/V₂</td>
+                <td class="progressive">was/were + Ving</td>
+                <td class="perfect">had + Ved/V₃</td>
+                <td class="perfect-progressive">had + been + Ving</td>
+            </tr>
+
+            <tr>
+                <td class="small-col sign">?</td>
+                <td class="simple">did + V</td>
+                <td class="progressive">inversion</td>
+                <td class="perfect">inversion</td>
+                <td class="perfect-progressive">inversion</td>
+            </tr>
+
+            <tr>
+                <td class="small-col sign">-</td>
+                <td class="simple">did + not + V</td>
+                <td class="progressive">was/were + not + Ving</td>
+                <td class="perfect">had + not + Ved/V₃</td>
+                <td class="perfect-progressive">had + not + been + Ving</td>
+            </tr>
+
+            <tr>
+                <td class="row-title period-title" colspan="2">Period of time</td>
+                <td class="simple period-text">tomorrow, next week (month,<br>year)</td>
+                <td class="progressive period-text">tomorrow at 3 p.m., tomorrow<br>from 6 till 7, when you come</td>
+                <td class="perfect period-text">tomorrow by 3 p.m., before<br>some time in the future</td>
+                <td class="perfect-progressive period-text">tomorrow since 3 p.m., for<br>some time in the future</td>
+            </tr>
+
+            <tr>
+                <td class="row-title" rowspan="3">Future</td>
+                <td class="small-col sign">+</td>
+                <td class="simple">will + V</td>
+                <td class="progressive">will + be + Ving</td>
+                <td class="perfect">will + have + Ved/V₃</td>
+                <td class="perfect-progressive">will + have + been + Ving</td>
+            </tr>
+
+            <tr>
+                <td class="small-col sign">?</td>
+                <td class="simple">inversion</td>
+                <td class="progressive">inversion</td>
+                <td class="perfect">inversion</td>
+                <td class="perfect-progressive">inversion</td>
+            </tr>
+
+            <tr>
+                <td class="small-col sign">-</td>
+                <td class="simple">won't + V</td>
+                <td class="progressive">won't + be + Ving</td>
+                <td class="perfect">won't + have + Ved/V₃</td>
+                <td class="perfect-progressive">won't + have + been + Ving</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+</body>
+
+</html>
