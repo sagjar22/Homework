@@ -18,11 +18,8 @@ td {
     font-size: 14px;
 }
 
-.small-col {
-    width: 40px;
-}
-
 .sign {
+    width: 40px;
     font-weight: bold;
     background: #f3e2a0;
 }
@@ -47,10 +44,6 @@ td {
     background: #d6a6d6;
 }
 
-.row-title {
-    background: #f3e2a0;
-}
-
 .meaning {
     font-weight: bold;
 }
@@ -59,7 +52,7 @@ td {
     font-style: italic;
 }
 
-.period-title {
+.period {
     font-style: italic;
     font-weight: bold;
     text-align: left;
