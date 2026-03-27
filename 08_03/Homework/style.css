@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+img {
+    width: 450px;
+    height: 350px;
+}
+
+.container {
+    width: 700px;
+    margin: 50px auto;
+}
+
+.card {
+    width: 200px;
+    margin: 10px;
+    float: left;
+    position: relative;
+    background: white;
+    border-bottom: 4px solid orange;
+}
+
+.card img {
+    width: 100%;
+    display: block;
+}
+
+.overlay {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 180px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+}
+
+.card:hover .overlay {
+    display: block;
+}
+
+.container::after {
+    display: block;
+    clear: both;
+}
