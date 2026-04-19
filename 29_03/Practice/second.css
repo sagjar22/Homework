@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url(../../shared_resources/fon/fon.jpg);
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-box {
+    width: 700px;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.493);
+    border: 1px solid grey;
+    box-shadow: 0 0 20px black;
+    color: white;
+}
+
+h2 {
+    margin-bottom: 5px;
+}
+
+.title {
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-size: 13px;
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+
+textarea {
+    height: 120px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px;
+
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: rgba(128, 128, 128, 0.295);
+}
