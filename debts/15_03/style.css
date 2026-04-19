@@ -1,0 +1,87 @@
+body{
+    font-family: Arial, sans-serif;
+    background:#fff;
+}
+
+table{
+    border-collapse: collapse;
+    margin:40px auto;
+    width:900px;
+}
+
+th, td{
+    border:1px solid #dcdcdc;
+    padding:14px;
+    font-size:14px;
+}
+
+tr:first-child th{
+    color:#fff;
+    font-weight:600;
+}
+
+tr:first-child th:first-child{
+    background:#7887AA;
+    text-align:left;
+    padding-left:20px;
+}
+
+tr:first-child th:nth-child(2){
+    background:#4B5F8C;
+}
+
+tr:first-child th:nth-child(3){
+    background:#2D4173;
+}
+
+tr:first-child th:nth-child(4){
+    background:#142951;
+}
+
+tr:first-child th:last-child{
+    background:#051537;
+}
+
+td:first-child{
+    background:#eeeeee;
+    text-align:left;
+    padding-left:20px;
+    color:#555;
+    width:220px;
+}
+
+tr:nth-child(2) td:nth-child(3),
+tr:nth-child(2) td:nth-child(5),
+tr:nth-child(4) td:nth-child(3),
+tr:nth-child(4) td:nth-child(5),
+tr:nth-child(6) td:nth-child(3),
+tr:nth-child(6) td:nth-child(5),
+tr:last-child td:first-child{
+    background:#eeeeee;
+}
+
+tr:nth-child(even):not(:first-child){
+    background:#fafafa;
+}
+
+td:not(:first-child), th:not(:first-child){
+    text-align:center;
+}
+
+tr:last-child td{
+    background:#ffffff;
+    padding:20px;
+}
+
+button{
+    padding:8px 18px;
+    font-size:12px;
+    border:1px solid #cfcfcf;
+    background:#f4f4f4;
+    cursor:pointer;
+    letter-spacing:1px;
+}
+
+button:hover{
+    background:#e0e0e0;
+}
