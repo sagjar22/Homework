@@ -3,16 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YouTube</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="shortcut icon" href="./Icons/Better-Favicon.png">
     <style>
-        .line-clamp-2 {
-            display: -webkit-box;
-            overflow: hidden;
-        }
-
         .scrollbar-hide::-webkit-scrollbar {
             display: none;
         }
@@ -22,389 +17,97 @@
             scrollbar-width: none;
         }
 
-        .backdrop-blur-custom {
-            backdrop-filter: blur(12px);
-        }
-
-        .video-card {
-            transition: transform 0.2s ease;
-        }
-
-        .video-card:hover {
-            transform: scale(0.98);
-        }
-
         body {
             background-color: #0F0F0F;
+            overflow-x: hidden;
         }
 
-        @media (max-width: 585px) {
-            .pc-header {
-                display: flex !important;
-                background-color: rgba(15, 15, 15, 0.95) !important;
-                backdrop-filter: blur(12px) !important;
-            }
-
-            .mobile-header {
-                display: none !important;
-            }
-
-            .mobile-content {
-                display: block !important;
-            }
-
-            .pc-content {
-                display: none !important;
-            }
-
-            .bottom-nav {
-                display: flex !important;
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                background-color: rgba(15, 15, 15, 0.95);
-                backdrop-filter: blur(12px);
-                border-top: 1px solid #272727;
-                padding: 8px 16px;
-                z-index: 100;
-                justify-content: space-around;
-                align-items: center;
-            }
-
-            .bottom-nav-item {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 4px;
-                padding: 4px 8px;
-                border-radius: 8px;
-                cursor: pointer;
-            }
-
-            .bottom-nav-item span {
-                font-size: 11px;
-            }
-
-            .bottom-nav-item img {
-                width: 22px;
-                height: 22px;
-            }
-
-            body {
-                padding-bottom: 70px;
-            }
-
-            .video-grid-1 {
-                display: flex !important;
-                flex-direction: column;
-                gap: 16px;
-            }
-
-            .shorts-grid-2 {
-                display: grid !important;
-                grid-template-columns: repeat(2, 1fr) !important;
-                gap: 12px !important;
-            }
-
-            .tablet-sidebar,
-            .desktop-sidebar {
-                display: none !important;
-            }
-
-            .categories-fixed {
-                left: 0 !important;
-            }
+        .flyout-menu {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.15s ease-in-out;
+            pointer-events: none;
         }
 
-        @media (min-width: 651px) and (max-width: 800px) {
-            .pc-header {
-                display: flex !important;
-                background-color: rgba(15, 15, 15, 0.95) !important;
-                backdrop-filter: blur(12px) !important;
-            }
-
-            .mobile-header {
-                display: none !important;
-            }
-
-            .mobile-content {
-                display: none !important;
-            }
-
-            .pc-content {
-                display: block !important;
-            }
-
-            .bottom-nav {
-                display: none !important;
-            }
-
-            .video-grid-2 {
-                display: grid !important;
-                grid-template-columns: repeat(2, 1fr) !important;
-                gap: 16px !important;
-            }
-
-            .shorts-grid-3 {
-                display: grid !important;
-                grid-template-columns: repeat(3, 1fr) !important;
-                gap: 16px !important;
-            }
-
-            .tablet-sidebar,
-            .desktop-sidebar {
-                display: none !important;
-            }
-
-            .search-bar {
-                display: flex !important;
-                width: 40%;
-            }
-        }
-
-        @media (min-width: 801px) and (max-width: 980px) {
-            .pc-header {
-                display: flex !important;
-                background-color: rgba(15, 15, 15, 0.95) !important;
-                backdrop-filter: blur(12px) !important;
-            }
-
-            .mobile-header {
-                display: none !important;
-            }
-
-            .mobile-content {
-                display: none !important;
-            }
-
-            .pc-content {
-                display: block !important;
-            }
-
-            .bottom-nav {
-                display: none !important;
-            }
-
-            .video-grid-3 {
-                display: grid !important;
-                grid-template-columns: repeat(3, 1fr) !important;
-                gap: 20px !important;
-            }
-
-            .shorts-grid-4 {
-                display: grid !important;
-                grid-template-columns: repeat(4, 1fr) !important;
-                gap: 16px !important;
-            }
-
-            .tablet-sidebar {
-                display: flex !important;
-                width: 72px;
-                background-color: #0F0F0F !important;
-            }
-
-            .desktop-sidebar {
-                display: none !important;
-            }
-
-            .search-bar {
-                display: flex !important;
-                width: 45%;
-            }
-        }
-
-        @media (min-width: 981px) {
-            .pc-header {
-                display: flex !important;
-                background-color: rgba(15, 15, 15, 0.95) !important;
-                backdrop-filter: blur(12px) !important;
-            }
-
-            .mobile-header {
-                display: none !important;
-            }
-
-            .mobile-content {
-                display: none !important;
-            }
-
-            .pc-content {
-                display: block !important;
-            }
-
-            .bottom-nav {
-                display: none !important;
-            }
-
-            .video-grid-4 {
-                display: grid !important;
-                grid-template-columns: repeat(4, 1fr) !important;
-                gap: 24px !important;
-            }
-
-            .shorts-grid-6 {
-                display: grid !important;
-                grid-template-columns: repeat(6, 1fr) !important;
-                gap: 16px !important;
-            }
-
-            .tablet-sidebar {
-                display: none !important;
-            }
-
-            .desktop-sidebar {
-                display: flex !important;
-                width: 80px;
-                background-color: #0F0F0F !important;
-            }
-
-            .search-bar {
-                display: flex !important;
-                width: 55%;
-            }
-        }
-
-        .video-grid-1,
-        .video-grid-2,
-        .video-grid-3,
-        .video-grid-4 {
-            display: none;
-        }
-
-        .shorts-grid-2,
-        .shorts-grid-3,
-        .shorts-grid-4,
-        .shorts-grid-6 {
-            display: none;
-        }
-
-        .search-bar {
-            display: flex;
-            flex: 1;
-            justify-content: center;
-        }
-
-        .search-bar .max-w-2xl {
-            max-width: 42rem;
-            width: 100%;
-        }
-
-        .pc-header header {
-            width: 100%;
-        }
-
-        @media (min-width: 651px) and (max-width: 800px) {
-            .search-bar .max-w-2xl {
-                max-width: 320px !important;
-            }
-        }
-
-        @media (min-width: 801px) and (max-width: 980px) {
-            .search-bar .max-w-2xl {
-                max-width: 380px !important;
-            }
-        }
-
-        @media (min-width: 981px) {
-            .search-bar .max-w-2xl {
-                max-width: 600px !important;
-            }
+        .group:hover .flyout-menu {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
         }
     </style>
 </head>
 
-<body class="bg-[#0F0F0F] text-white font-[Roboto, Arial, sans-serif]">
+<body class="text-white font-[Roboto,Arial,sans-serif] pb-20 md:pb-0">
 
-    <div class="pc-header fixed top-0 left-0 right-0 z-50">
-        <header class="flex items-center justify-between px-4 py-2 bg-[#0F0F0F]/95 backdrop-blur-custom gap-4">
-            <div class="flex items-center shrink-0 gap-4">
-                <button class="p-2 hover:bg-[#272727] rounded-full cursor-pointer transition">
-                    <img src="./Icons/BurgerIcon.png" alt="menu" class="w-7 h-7">
-                </button>
-                <div class="flex items-center gap-0 cursor-pointer">
-                    <img src="./Icons/Better-Favicon.png" alt="youtube logo" class="w-10 h-9">
-                    <span class="font-semibold text-lg">YouTube</span>
-                </div>
+    <header
+        class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 py-2 bg-[#0F0F0F]/95 backdrop-blur-md">
+        <div class="flex items-center gap-4 shrink-0">
+            <button class="p-2 hover:bg-[#272727] rounded-full transition">
+                <img src="./Icons/BurgerIcon.png" alt="menu" class="w-7 h-7">
+            </button>
+            <div class="flex items-center cursor-pointer">
+                <img src="./Icons/Better-Favicon.png" alt="logo" class="w-10 h-9">
+                <span class="font-semibold text-lg ml-1 hidden sm:block">YouTube</span>
             </div>
-            <div class="search-bar flex items-center flex-1 justify-center">
-                <form class="flex items-center w-full max-w-2xl">
-                    <input type="text" placeholder="Введите запрос"
-                        class="flex-1 bg-[#121212] border border-[#303030] px-4 py-2 rounded-l-full text-sm outline-none">
-                    <button class="px-3 py-2 border border-[#333333] border-l-0 bg-[#121212] cursor-pointer">
-                        <img src="./Icons/Keyboard-Icon.png" alt="keyboard" class="w-5 h-5">
-                    </button>
-                    <button
-                        class="bg-[#272727] px-4 py-2 border border-[#303030] border-l-0 rounded-r-full hover:bg-[#3a3a3a] cursor-pointer transition">
-                        <img src="./Icons/Magnifying-Glass-Icon.png" alt="search" class="w-5 h-5">
-                    </button>
-                    <button class="ml-2 bg-[#272727] p-2 rounded-full hover:bg-[#3a3a3a] cursor-pointer transition">
-                        <img src="./Icons/Micro-Icon.png" alt="microphone" class="w-5 h-5">
-                    </button>
-                </form>
-            </div>
-            <div class="flex items-center shrink-0 gap-3">
-                <button
-                    class="bg-[#272727] px-4 py-2 rounded-full font-semibold hover:bg-[#3a3a3a] cursor-pointer flex items-center gap-2 transition">
-                    <img src="./Icons/Add-Icon.png" alt="create" class="w-5 h-5">
-                    <span>Создать</span>
-                </button>
-                <button class="p-2 hover:bg-[#272727] rounded-full cursor-pointer transition">
-                    <img src="./Icons/Notification-Icon.png" alt="notifications" class="w-7 h-7">
-                </button>
-                <button class="p-2 hover:bg-[#272727] rounded-full cursor-pointer transition">
-                    <img src="./Icons/Avatars/Avatar-Icon.png" alt="avatar" class="w-8 h-8">
-                </button>
-            </div>
-        </header>
-    </div>
+        </div>
 
-    <div class="flex pt-14">
-        <aside
-            class="tablet-sidebar fixed left-0 top-14 bottom-0 bg-[#0F0F0F] flex flex-col items-center pt-4 gap-6 z-40 overflow-y-auto">
-            <div
-                class="flex flex-col items-center gap-1 hover:bg-[#272727] p-2 rounded-xl cursor-pointer w-full transition">
-                <img src="./Icons/Main-Icon.png" alt="home" class="w-6 h-6">
-                <span class="text-xs">Главная</span>
-            </div>
-            <div
-                class="flex flex-col items-center gap-1 hover:bg-[#272727] p-2 rounded-xl cursor-pointer w-full transition">
-                <img src="./Icons/Shorts-Icon.png" alt="shorts" class="w-6 h-6">
-                <span class="text-xs">Shorts</span>
-            </div>
-            <div
-                class="flex flex-col items-center gap-1 hover:bg-[#272727] p-2 rounded-xl cursor-pointer w-full transition">
-                <img src="./Icons/Subscrition-Icon.png" alt="subscriptions" class="w-6 h-6">
-                <span class="text-xs">Подписки</span>
-            </div>
-            <div
-                class="flex flex-col items-center gap-1 hover:bg-[#272727] p-2 rounded-xl cursor-pointer w-full transition">
-                <img src="./Icons/Avatars/Avatar-Icon.png" alt="you" class="w-6 h-6">
-                <span class="text-xs">Вы</span>
-            </div>
-        </aside>
+        <div class="flex-1 max-w-[720px] px-4 flex items-center gap-2 justify-center">
+            <form class="flex w-full max-w-2xl">
+                <input type="text" placeholder="Введите запрос"
+                    class="w-full bg-[#121212] border border-[#303030] px-4 py-2 rounded-l-full outline-none focus:border-blue-500">
+                <button class="px-3 py-2 border border-[#333333] border-l-0 bg-[#121212] cursor-pointer">
+                    <img src="./Icons/Keyboard-Icon.png" alt="keyboard" class="w-5 h-5">
+                </button>
+                <button class="bg-[#272727] px-5 border border-l-0 border-[#303030] rounded-r-full hover:bg-[#3a3a3a]">
+                    <img src="./Icons/Magnifying-Glass-Icon.png" class="w-5 h-5">
+                </button>
+            </form>
+            <button class="bg-[#272727] p-2.5 rounded-full hover:bg-[#3a3a3a] hidden sm:block">
+                <img src="./Icons/Micro-Icon.png" class="w-5 h-5">
+            </button>
+        </div>
 
-        <aside
-            class="desktop-sidebar fixed left-0 top-14 bottom-0 bg-[#0F0F0F] flex flex-col items-center pt-4 gap-6 z-40 overflow-y-auto">
-            <div
-                class="flex flex-col items-center gap-1 hover:bg-[#272727] p-2 rounded-xl cursor-pointer w-full transition">
-                <img src="./Icons/Main-Icon.png" alt="home" class="w-6 h-6">
-                <span class="text-xs">Главная</span>
+        <div class="flex items-center gap-3 shrink-0">
+            <button
+                class="hidden md:flex items-center gap-2 bg-[#272727] px-4 py-2 rounded-full hover:bg-[#3a3a3a] font-semibold text-sm transition">
+                <img src="./Icons/Add-Icon.png" class="w-5 h-5"> <span>Создать</span>
+            </button>
+            <button class="p-2 hover:bg-[#272727] rounded-full transition">
+                <img src="./Icons/Notification-Icon.png" class="w-7 h-7">
+            </button>
+            <button class="p-1 hover:bg-[#272727] rounded-full transition">
+                <img src="./Icons/Avatars/Avatar-Icon.png" alt="avatar" class="w-8 h-8 rounded-full">
+            </button>
+        </div>
+    </header>
+
+    <aside
+        class="fixed left-0 top-14 bottom-0 w-20 xl:w-24 bg-[#0F0F0F] hidden md:flex flex-col items-center py-4 z-40">
+        <nav class="flex flex-col w-full space-y-6">
+            <div class="flex flex-col items-center gap-1 hover:bg-[#272727] p-2 rounded-xl cursor-pointer transition">
+                <img src="./Icons/Main-Icon.png" class="w-6 h-6">
+                <span class="text-[10px]">Главная</span>
             </div>
-            <div
-                class="flex flex-col items-center gap-1 hover:bg-[#272727] p-2 rounded-xl cursor-pointer w-full transition">
-                <img src="./Icons/Shorts-Icon.png" alt="shorts" class="w-6 h-6">
-                <span class="text-xs">Shorts</span>
+
+            <div class="flex flex-col items-center gap-1 hover:bg-[#272727] p-2 rounded-xl cursor-pointer transition">
+                <img src="./Icons/Shorts-Icon.png" class="w-6 h-6">
+                <span class="text-[10px]">Shorts</span>
             </div>
-            <div class="relative group w-full flex justify-center">
+
+            <div class="relative group w-full flex flex-col items-center">
                 <div
-                    class="flex flex-col items-center gap-1 hover:bg-[#272727] p-2 rounded-xl cursor-pointer w-full transition">
-                    <img src="./Icons/Subscrition-Icon.png" alt="subscriptions" class="w-10 h-6">
-                    <span class="text-xs">Подписки</span>
+                    class="flex flex-col items-center gap-1 hover:bg-[#272727] p-2 rounded-xl cursor-pointer transition w-full">
+                    <img src="./Icons/Subscrition-Icon.png" class="w-6 h-6">
+                    <span class="text-[10px]">Подписки</span>
                 </div>
-                <div class="hidden group-hover:block absolute left-20 top-0 bg-[#272727] p-4 rounded-xl w-64 z-50">
-                    <p class="font-bold mb-2">Подписки</p>
+                <div
+                    class="flyout-menu fixed left-20 xl:left-24 top-40 w-64 bg-[#272727] rounded-xl shadow-2xl p-4 border border-[#3f3f3f] z-[60]">
+                    <p class="font-bold mb-3">Подписки</p>
                     <div class="space-y-2">
+                        <div class="flex items-center gap-3 hover:bg-[#3a3a3a] p-2 rounded cursor-pointer transition">
+                            <img src="./Icons/Avatars/Tixon-Avatar.jpg" class="w-6 h-6 rounded-full"><span>Тихон
+                                Елисеевич</span>
+                        </div>
                         <div class="flex items-center gap-3 hover:bg-[#3a3a3a] p-2 rounded cursor-pointer transition">
                             <img src="./Icons/Avatars/Mangekyo-Avatar.jpg"
                                 class="w-6 h-6 rounded-full"><span>mangekyou</span>
@@ -417,21 +120,23 @@
                                 class="w-6 h-6 rounded-full"><span>LenaGolovach Best Moments</span>
                         </div>
                         <div class="flex items-center gap-3 hover:bg-[#3a3a3a] p-2 rounded cursor-pointer transition">
-                            <img src="./Icons/Avatars/Tixon-Avatar.jpg" class="w-6 h-6 rounded-full"><span>Тихон
-                                Елисеевич</span>
+                            <img src="./Icons/Avatars/Mad-Avatar.jpg" class="w-6 h-6 rounded-full"><span>Mad</span>
                         </div>
+
                         <div class="hover:bg-[#3a3a3a] p-2 rounded cursor-pointer transition">Развернуть</div>
                     </div>
                 </div>
             </div>
-            <div class="relative group w-full flex justify-center">
+
+            <div class="relative group w-full flex flex-col items-center">
                 <div
-                    class="flex flex-col items-center gap-1 hover:bg-[#272727] p-2 rounded-xl cursor-pointer w-full transition">
-                    <img src="./Icons/Avatars/Avatar-Icon.png" alt="you" class="w-6 h-6">
-                    <span class="text-xs">Вы</span>
+                    class="flex flex-col items-center gap-1 hover:bg-[#272727] p-2 rounded-xl cursor-pointer transition w-full">
+                    <img src="./Icons/Avatars/Avatar-Icon.png" class="w-6 h-6 rounded-full">
+                    <span class="text-[10px]">Вы</span>
                 </div>
-                <div class="hidden group-hover:block absolute left-20 top-0 bg-[#272727] p-4 rounded-xl w-64 z-50">
-                    <p class="font-bold mb-2">Вы</p>
+                <div
+                    class="flyout-menu fixed left-20 xl:left-24 top-64 w-64 bg-[#272727] rounded-xl shadow-2xl p-4 border border-[#3f3f3f] z-[60]">
+                    <p class="font-bold mb-3">Вы</p>
                     <div class="space-y-2">
                         <div class="flex items-center gap-3 hover:bg-[#3a3a3a] p-2 rounded cursor-pointer transition">
                             <img src="./Icons/Avatars/Avatar-Icon.png" class="w-5 h-5"><span>Мой канал</span>
@@ -442,553 +147,384 @@
                         <div class="flex items-center gap-3 hover:bg-[#3a3a3a] p-2 rounded cursor-pointer transition">
                             <img src="./Icons/Playlist-Icon.png" class="w-5 h-5"><span>Плейлисты</span>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </aside>
-
-        <main class="flex-1 pc-content pt-28 pl-20">
-            <div
-                class="categories-fixed fixed top-14 left-20 right-0 bg-[#0F0F0F]/95 backdrop-blur-custom z-30 px-4 py-2 border-b border-[#272727]">
-                <div class="relative">
-                    <div class="overflow-x-auto whitespace-nowrap scrollbar-hide">
-                        <div class="inline-flex gap-3">
-                            <button
-                                class="px-4 py-2 bg-white text-black rounded-full text-sm whitespace-nowrap hover:bg-gray-200 transition">Все</button>
-                            <button
-                                class="px-4 py-2 bg-[#272727] text-white rounded-full text-sm whitespace-nowrap hover:bg-[#3a3a3a] transition">Видеоигры</button>
-                            <button
-                                class="px-4 py-2 bg-[#272727] text-white rounded-full text-sm whitespace-nowrap hover:bg-[#3a3a3a] transition">Музыка</button>
-                            <button
-                                class="px-4 py-2 bg-[#272727] text-white rounded-full text-sm whitespace-nowrap hover:bg-[#3a3a3a] transition">Джемы</button>
-                            <button
-                                class="px-4 py-2 bg-[#272727] text-white rounded-full text-sm whitespace-nowrap hover:bg-[#3a3a3a] transition">Ситкомы</button>
-                            <button
-                                class="px-4 py-2 bg-[#272727] text-white rounded-full text-sm whitespace-nowrap hover:bg-[#3a3a3a] transition">Скетч-шоу</button>
-                            <button
-                                class="px-4 py-2 bg-[#272727] text-white rounded-full text-sm whitespace-nowrap hover:bg-[#3a3a3a] transition">Новости</button>
-                            <button
-                                class="px-4 py-2 bg-[#272727] text-white rounded-full text-sm whitespace-nowrap hover:bg-[#3a3a3a] transition">Grand
-                                Theft Auto Five</button>
-                            <button
-                                class="px-4 py-2 bg-[#272727] text-white rounded-full text-sm whitespace-nowrap hover:bg-[#3a3a3a] transition">Minecraft</button>
-                            <button
-                                class="px-4 py-2 bg-[#272727] text-white rounded-full text-sm whitespace-nowrap hover:bg-[#3a3a3a] transition">Экшен</button>
-                            <button
-                                class="px-4 py-2 bg-[#272727] text-white rounded-full text-sm whitespace-nowrap hover:bg-[#3a3a3a] transition">Мультфильмы</button>
-                            <button
-                                class="px-4 py-2 bg-[#272727] text-white rounded-full text-sm whitespace-nowrap hover:bg-[#3a3a3a] transition">Живая
-                                природа</button>
-                            <button
-                                class="px-4 py-2 bg-[#272727] text-white rounded-full text-sm whitespace-nowrap hover:bg-[#3a3a3a] transition">Кулинария</button>
-                            <button
-                                class="px-4 py-2 bg-[#272727] text-white rounded-full text-sm whitespace-nowrap hover:bg-[#3a3a3a] transition">Недавно
-                                опубликованные</button>
-                            <button
-                                class="px-4 py-2 bg-[#272727] text-white rounded-full text-sm whitespace-nowrap hover:bg-[#3a3a3a] transition">Просмотрено</button>
+                        <div class="flex items-center gap-3 hover:bg-[#3a3a3a] p-2 rounded cursor-pointer transition">
+                            <img src="./Icons/Watch_Later-Icon.png" class="w-5 h-5"><span>Смотреть позже</span>
                         </div>
-                    </div>
-                    <div
-                        class="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#0F0F0F] via-[#0F0F0F]/80 to-transparent pointer-events-none">
-                    </div>
-                    <div
-                        class="absolute right-1 top-1/2 -translate-y-1/2 w-8 h-8 bg-[#1a1a1a] rounded-full flex items-center justify-center cursor-pointer hover:bg-[#3a3a3a] transition border border-[#3f3f3f] shadow-lg z-10">
-                        <span class="text-white text-xl leading-none">›</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="video-grid-2 video-grid-3 video-grid-4 mt-4">
-                <div class="cursor-pointer video-card transition">
-                    <img src="./Icons/Watch/mangekyou1.png" class="rounded-xl w-full">
-                    <div class="flex mt-3 gap-3">
-                        <img src="./Icons/Avatars/Mangekyo-Avatar.jpg" class="w-9 h-9 rounded-full">
-                        <div class="flex justify-between w-full">
-                            <div>
-                                <p class="text-sm font-semibold leading-tight">ГАЙД НА ИМБУ ОТ ТОП 1 БРУДЫ в ПАТЧЕ 7.40
-                                </p>
-                                <p class="text-xs text-gray-400">mangekyou</p>
-                                <p class="text-xs text-gray-400">34 тыс. просмотров • 3 мес. назад</p>
-                            </div>
-                            <button class="opacity-0 group-hover:opacity-100 transition p-1"><img
-                                    src="./Icons/3_dots-Icon.png" class="w-5 h-5"></button>
+                        <div class="flex items-center gap-3 hover:bg-[#3a3a3a] p-2 rounded cursor-pointer transition">
+                            <img src="./Icons/Like-Icon.png" class="w-5 h-5"><span>Понравившиеся</span>
                         </div>
-                    </div>
-                </div>
-                <div class="cursor-pointer video-card transition">
-                    <img src="./Icons/Watch/Tihon1.jpg" class="rounded-xl w-full">
-                    <div class="flex mt-3 gap-3">
-                        <img src="./Icons/Avatars/Tixon-Avatar.jpg" class="w-9 h-9 rounded-full">
-                        <div class="flex justify-between w-full">
-                            <div>
-                                <p class="text-sm font-semibold leading-tight">1V1 ПРОТИВ ТИКТОКЕРОВ | DEAD BY DAYLIGHT
-                                </p>
-                                <p class="text-xs text-gray-400">Тихон Елисеевич</p>
-                                <p class="text-xs text-gray-400">57 тыс. просмотров • 8 мес. назад</p>
-                            </div>
-                            <button class="opacity-0 group-hover:opacity-100 transition p-1"><img
-                                    src="./Icons/3_dots-Icon.png" class="w-5 h-5"></button>
+                        <div class="flex items-center gap-3 hover:bg-[#3a3a3a] p-2 rounded cursor-pointer transition">
+                            <img src="./Icons/Your_Video-Icon.png" class="w-5 h-5"><span>Ваши видео</span>
                         </div>
-                    </div>
-                </div>
-                <div class="cursor-pointer video-card transition">
-                    <img src="./Icons/Watch/ez25_1.jpg" class="rounded-xl w-full">
-                    <div class="flex mt-3 gap-3">
-                        <img src="./Icons/Avatars/EZ-25-Avatar.jpg" class="w-9 h-9 rounded-full">
-                        <div class="flex justify-between w-full">
-                            <div>
-                                <p class="text-sm font-semibold leading-tight">НАЙС ИГРАЕШЬ — ГОЛОВАЧ</p>
-                                <p class="text-xs text-gray-400">EZ 25</p>
-                                <p class="text-xs text-gray-400">842 тыс. просмотров • 2 мес. назад</p>
-                            </div>
-                            <button class="opacity-0 group-hover:opacity-100 transition p-1"><img
-                                    src="./Icons/3_dots-Icon.png" class="w-5 h-5"></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="cursor-pointer video-card transition">
-                    <img src="./Icons/Watch/Golovach1.jpg" class="rounded-xl w-full">
-                    <div class="flex mt-3 gap-3">
-                        <img src="./Icons/Avatars/Golovach-Avatar.jpg" class="w-9 h-9 rounded-full">
-                        <div class="flex justify-between w-full">
-                            <div>
-                                <p class="text-sm font-semibold leading-tight">ЕМУ СНОВА ОТКЛЮЧИЛИ ВОЙС</p>
-                                <p class="text-xs text-gray-400">LenaGolovach Best Moments</p>
-                                <p class="text-xs text-gray-400">8,3 тыс. просмотров • 11 дней назад</p>
-                            </div>
-                            <button class="opacity-0 group-hover:opacity-100 transition p-1"><img
-                                    src="./Icons/3_dots-Icon.png" class="w-5 h-5"></button>
+                        <div class="flex items-center gap-3 hover:bg-[#3a3a3a] p-2 rounded cursor-pointer transition">
+                            <img src="./Icons/Download-Icon.png " class="w-5 h-5"><span>Скачанные</span>
                         </div>
                     </div>
                 </div>
             </div>
+        </nav>
+    </aside>
 
-            <div class="shorts-grid-2 shorts-grid-3 shorts-grid-4 shorts-grid-6 mt-6">
-                <div class="flex items-center gap-2 mb-4 col-span-full">
-                    <img src="./Icons/Red_Shorts-Icon.png" class="w-6 h-6">
-                    <h2 class="text-lg font-semibold">Shorts</h2>
-                </div>
-                <div class="cursor-pointer video-card transition"><img src="./Icons/Shorts/Tihon.jpg"
-                        class="rounded-xl w-full h-[280px] object-cover">
-                    <div class="flex gap-2 mt-2"><img src="./Icons/Avatars/Tixon-Avatar.jpg"
-                            class="w-8 h-8 rounded-full">
-                        <div>
-                            <p class="text-sm line-clamp-2">НЕОЖИДАННЫЙ ФАКТ О ЧАРАХ</p>
-                            <p class="text-xs text-gray-400">16 тыс. просмотров</p>
-                        </div><img src="./Icons/3_dots-Icon.png" class="w-5 h-5 ml-auto">
-                    </div>
-                </div>
-                <div class="cursor-pointer video-card transition"><img src="./Icons/Shorts/Mad1.jpg"
-                        class="rounded-xl w-full h-[280px] object-cover">
-                    <div class="flex gap-2 mt-2"><img src="./Icons/Avatars/Mad-Avatar.jpg" class="w-8 h-8 rounded-full">
-                        <div>
-                            <p class="text-sm line-clamp-2">MAD REDUX v1.0 - РЕДУКС КОТОРЫЙ ТЫ ИСКАЛ</p>
-                            <p class="text-xs text-gray-400">6,7 тыс. просмотров</p>
-                        </div><img src="./Icons/3_dots-Icon.png" class="w-5 h-5 ml-auto">
-                    </div>
-                </div>
-                <div class="cursor-pointer video-card transition"><img src="./Icons/Shorts/lunivra1.jpg"
-                        class="rounded-xl w-full h-[280px] object-cover">
-                    <div class="flex gap-2 mt-2"><img src="./Icons/Avatars/Lunivra-Avatar.jpg"
-                            class="w-8 h-8 rounded-full">
-                        <div>
-                            <p class="text-sm line-clamp-2">ЭТОТ ПЕРК НУЖЕН В ВАШЕМ БИЛДЕ</p>
-                            <p class="text-xs text-gray-400">113 тыс. просмотров</p>
-                        </div><img src="./Icons/3_dots-Icon.png" class="w-5 h-5 ml-auto">
-                    </div>
-                </div>
-                <div class="cursor-pointer video-card transition"><img src="./Icons/Shorts/Fleksym1.jpg"
-                        class="rounded-xl w-full h-[280px] object-cover">
-                    <div class="flex gap-2 mt-2"><img src="./Icons/Avatars/Fleksym-Avatar.jpg"
-                            class="w-8 h-8 rounded-full">
-                        <div>
-                            <p class="text-sm line-clamp-2">Стабильный БИЛД в ДБД</p>
-                            <p class="text-xs text-gray-400">7,7 тыс. просмотров</p>
-                        </div><img src="./Icons/3_dots-Icon.png" class="w-5 h-5 ml-auto">
-                    </div>
-                </div>
-                <div class="cursor-pointer video-card transition"><img src="./Icons/Shorts/toshagank.jpg"
-                        class="rounded-xl w-full h-[280px] object-cover">
-                    <div class="flex gap-2 mt-2"><img src="./Icons/Avatars/toshagank-Avatar.jpg"
-                            class="w-8 h-8 rounded-full">
-                        <div>
-                            <p class="text-sm line-clamp-2">тот момент на Troll Warlord</p>
-                            <p class="text-xs text-gray-400">732 тыс. просмотров</p>
-                        </div><img src="./Icons/3_dots-Icon.png" class="w-5 h-5 ml-auto">
-                    </div>
-                </div>
-                <div class="cursor-pointer video-card transition"><img src="./Icons/Shorts/Kuplinov1.jpg"
-                        class="rounded-xl w-full h-[280px] object-cover">
-                    <div class="flex gap-2 mt-2"><img src="./Icons/Avatars/KUPLINOV_Shorts1-Avatar.jpg"
-                            class="w-8 h-8 rounded-full">
-                        <div>
-                            <p class="text-sm line-clamp-2">Всё украли! ► Kuplinov</p>
-                            <p class="text-xs text-gray-400">457 тыс. просмотров</p>
-                        </div><img src="./Icons/3_dots-Icon.png" class="w-5 h-5 ml-auto">
-                    </div>
-                </div>
-            </div>
+    <main class="md:pl-24 pt-14 px-4">
+        <nav
+            class="sticky top-14 left-0 right-0 bg-[#0F0F0F]/95 backdrop-blur-md z-30 py-3 overflow-x-auto scrollbar-hide">
+            <ul class="flex gap-3 whitespace-nowrap px-4">
+                <li>
+                    <button
+                        class="px-4 py-2 bg-white text-black rounded-full text-sm whitespace-nowrap hover:bg-gray-200 transition font-medium">Все</button>
+                </li>
+                <li>
+                    <button
+                        class="px-4 py-2 bg-[#272727] text-white rounded-full text-sm whitespace-nowrap hover:bg-[#3a3a3a] transition">Видеоигры</button>
+                </li>
+                <li>
+                    <button
+                        class="px-4 py-2 bg-[#272727] text-white rounded-full text-sm whitespace-nowrap hover:bg-[#3a3a3a] transition">Музыка</button>
+                </li>
+                <li>
+                    <button
+                        class="px-4 py-2 bg-[#272727] text-white rounded-full text-sm whitespace-nowrap hover:bg-[#3a3a3a] transition">Джемы</button>
+                </li>
+                <li>
+                    <button
+                        class="px-4 py-2 bg-[#272727] text-white rounded-full text-sm whitespace-nowrap hover:bg-[#3a3a3a] transition">Ситкомы</button>
+                </li>
+                <li>
+                    <button
+                        class="px-4 py-2 bg-[#272727] text-white rounded-full text-sm whitespace-nowrap hover:bg-[#3a3a3a] transition">Скетч-шоу</button>
+                </li>
+                <li>
+                    <button
+                        class="px-4 py-2 bg-[#272727] text-white rounded-full text-sm whitespace-nowrap hover:bg-[#3a3a3a] transition">Новости</button>
+                </li>
+                <li>
+                    <button
+                        class="px-4 py-2 bg-[#272727] text-white rounded-full text-sm whitespace-nowrap hover:bg-[#3a3a3a] transition">Grand
+                        Theft Auto Five</button>
+                </li>
+                <li>
+                    <button
+                        class="px-4 py-2 bg-[#272727] text-white rounded-full text-sm whitespace-nowrap hover:bg-[#3a3a3a] transition">Minecraft</button>
+                </li>
+                <li>
+                    <button
+                        class="px-4 py-2 bg-[#272727] text-white rounded-full text-sm whitespace-nowrap hover:bg-[#3a3a3a] transition">Экшен</button>
+                </li>
+                <li>
+                    <button
+                        class="px-4 py-2 bg-[#272727] text-white rounded-full text-sm whitespace-nowrap hover:bg-[#3a3a3a] transition">Мультфильмы</button>
+                </li>
+                <li>
+                    <button
+                        class="px-4 py-2 bg-[#272727] text-white rounded-full text-sm whitespace-nowrap hover:bg-[#3a3a3a] transition">Живая
+                        природа</button>
+                </li>
+                <li>
+                    <button
+                        class="px-4 py-2 bg-[#272727] text-white rounded-full text-sm whitespace-nowrap hover:bg-[#3a3a3a] transition">Кулинария</button>
+                </li>
+                <li>
+                    <button
+                        class="px-4 py-2 bg-[#272727] text-white rounded-full text-sm whitespace-nowrap hover:bg-[#3a3a3a] transition">Недавно
+                        опубликованные</button>
+                </li>
+                <li>
+                    <button
+                        class="px-4 py-2 bg-[#272727] text-white rounded-full text-sm whitespace-nowrap hover:bg-[#3a3a3a] transition">Просмотрено</button>
+                </li>
+            </ul>
+        </nav>
 
-            <div class="video-grid-2 video-grid-3 video-grid-4 mt-6">
-                <div class="cursor-pointer video-card transition"><img src="./Icons/Watch/laugh1.jpg"
-                        class="rounded-xl w-full">
-                    <div class="flex mt-3 gap-3"><img src="./Icons/Avatars/Venom-Avatar.jpg"
-                            class="w-9 h-9 rounded-full">
-                        <div class="flex justify-between w-full">
-                            <div>
-                                <p class="text-sm font-semibold leading-tight">you laugh, you lose venom</p>
-                                <p class="text-xs text-gray-400">749 тыс. просмотров • 8 месяцев назад</p>
-                            </div><button class="opacity-0 group-hover:opacity-100 transition p-1"><img
-                                    src="./Icons/3_dots-Icon.png" class="w-5 h-5"></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="cursor-pointer video-card transition"><img src="./Icons/Watch/Borat1.png"
-                        class="rounded-xl w-full">
-                    <div class="flex mt-3 gap-3"><img src="./Icons/Avatars/Borat-Avatar.jpg"
-                            class="w-9 h-9 rounded-full">
-                        <div class="flex justify-between w-full">
-                            <div>
-                                <p class="text-sm font-semibold leading-tight">Борат в Resident Evil 4</p>
-                                <p class="text-xs text-gray-400">3,2 млн. просмотров • 2 года назад</p>
-                            </div><button class="opacity-0 group-hover:opacity-100 transition p-1"><img
-                                    src="./Icons/3_dots-Icon.png" class="w-5 h-5"></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="cursor-pointer video-card transition"><img src="./Icons/Watch/Dbd1.jpg"
-                        class="rounded-xl w-full">
-                    <div class="flex mt-3 gap-3"><img src="./Icons/Avatars/Dbd_Things-Avatar.jpg"
-                            class="w-9 h-9 rounded-full">
-                        <div class="flex justify-between w-full">
-                            <div>
-                                <p class="text-sm font-semibold leading-tight">Confession of a Nurse Main</p>
-                                <p class="text-xs text-gray-400">553 тыс. просмотров • 3 года назад</p>
-                            </div><button class="opacity-0 group-hover:opacity-100 transition p-1"><img
-                                    src="./Icons/3_dots-Icon.png" class="w-5 h-5"></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="cursor-pointer video-card transition"><img src="./Icons/Watch/Quiz1.jpg"
-                        class="rounded-xl w-full">
-                    <div class="flex mt-3 gap-3"><img src="./Icons/Avatars/Quiz-Avatar.jpg"
-                            class="w-9 h-9 rounded-full">
-                        <div class="flex justify-between w-full">
-                            <div>
-                                <p class="text-sm font-semibold leading-tight">Guess the Horror Movie</p>
-                                <p class="text-xs text-gray-400">949 тыс. просмотров • 1 год назад</p>
-                            </div><button class="opacity-0 group-hover:opacity-100 transition p-1"><img
-                                    src="./Icons/3_dots-Icon.png" class="w-5 h-5"></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="shorts-grid-2 shorts-grid-3 shorts-grid-4 shorts-grid-6 mt-6">
-                <div class="flex items-center gap-2 mb-4 col-span-full"><img src="./Icons/Red_Shorts-Icon.png"
-                        class="w-6 h-6">
-                    <h2 class="text-lg font-semibold">Shorts</h2>
-                </div>
-                <div class="cursor-pointer video-card transition"><img src="./Icons/Shorts/wild1.jpg"
-                        class="rounded-xl w-full h-[280px] object-cover">
-                    <div class="flex gap-2 mt-2"><img src="./Icons/Avatars/WIld-Avatar.jpg"
-                            class="w-8 h-8 rounded-full">
-                        <div>
-                            <p class="text-sm line-clamp-2">Unexpected CONFLICT Between TWO Hunters!</p>
-                            <p class="text-xs text-gray-400">5,4 млн просмотров</p>
-                        </div><img src="./Icons/3_dots-Icon.png" class="w-5 h-5 ml-auto">
-                    </div>
-                </div>
-                <div class="cursor-pointer video-card transition"><img src="./Icons/Shorts/Moments1.jpg"
-                        class="rounded-xl w-full h-[280px] object-cover">
-                    <div class="flex gap-2 mt-2"><img src="./Icons/Avatars/Moments-Avatar.jpg"
-                            class="w-8 h-8 rounded-full">
-                        <div>
-                            <p class="text-sm line-clamp-2">Розыгрыш пошёл не по плану</p>
-                            <p class="text-xs text-gray-400">1,8 млн просмотров</p>
-                        </div><img src="./Icons/3_dots-Icon.png" class="w-5 h-5 ml-auto">
-                    </div>
-                </div>
-                <div class="cursor-pointer video-card transition"><img src="./Icons/Shorts/Premia1.jpg"
-                        class="rounded-xl w-full h-[280px] object-cover">
-                    <div class="flex gap-2 mt-2"><img src="./Icons/Avatars/Premia-Avatar.jpg"
-                            class="w-8 h-8 rounded-full">
-                        <div>
-                            <p class="text-sm line-clamp-2">Что за символ? Не пойму</p>
-                            <p class="text-xs text-gray-400">13 млн просмотров</p>
-                        </div><img src="./Icons/3_dots-Icon.png" class="w-5 h-5 ml-auto">
-                    </div>
-                </div>
-                <div class="cursor-pointer video-card transition"><img src="./Icons/Shorts/dushnila.jpg"
-                        class="rounded-xl w-full h-[280px] object-cover">
-                    <div class="flex gap-2 mt-2"><img src="./Icons/Avatars/Dushnila.jpg" class="w-8 h-8 rounded-full">
-                        <div>
-                            <p class="text-sm line-clamp-2">МИФЫ № 9</p>
-                            <p class="text-xs text-gray-400">5,2 млн просмотров</p>
-                        </div><img src="./Icons/3_dots-Icon.png" class="w-5 h-5 ml-auto">
-                    </div>
-                </div>
-                <div class="cursor-pointer video-card transition"><img src="./Icons/Shorts/Fakto1.jpg"
-                        class="rounded-xl w-full h-[280px] object-cover">
-                    <div class="flex gap-2 mt-2"><img src="./Icons/Avatars/Fakto-Avatar.jpg"
-                            class="w-8 h-8 rounded-full">
-                        <div>
-                            <p class="text-sm line-clamp-2">ТАК РАБОТАЕТ ИНТЕРНЕТ</p>
-                            <p class="text-xs text-gray-400">3 млн просмотров</p>
-                        </div><img src="./Icons/3_dots-Icon.png" class="w-5 h-5 ml-auto">
-                    </div>
-                </div>
-                <div class="cursor-pointer video-card transition"><img src="./Icons/Shorts/inside.jpg"
-                        class="rounded-xl w-full h-[280px] object-cover">
-                    <div class="flex gap-2 mt-2"><img src="./Icons/Avatars/Inside-Avatar.jpg"
-                            class="w-8 h-8 rounded-full">
-                        <div>
-                            <p class="text-sm line-clamp-2">Ошибка природы: Почему змеи едят сами себя?</p>
-                            <p class="text-xs text-gray-400">1,9 млн просмотров</p>
-                        </div><img src="./Icons/3_dots-Icon.png" class="w-5 h-5 ml-auto">
-                    </div>
-                </div>
-            </div>
-        </main>
-    </div>
-
-    <div class="mobile-content p-3 pt-28">
-        <div class="video-grid-1">
-            <div class="cursor-pointer video-card transition"><img src="./Icons/Watch/mangekyou1.png"
-                    class="rounded-xl w-full">
-                <div class="flex mt-3 gap-3"><img src="./Icons/Avatars/Mangekyo-Avatar.jpg"
-                        class="w-9 h-9 rounded-full">
-                    <div>
-                        <p class="text-sm font-semibold leading-tight">ГАЙД НА ИМБУ ОТ ТОП 1 БРУДЫ в ПАТЧЕ 7.40</p>
-                        <p class="text-xs text-gray-400">mangekyou</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 gap-y-8 mt-4">
+            <div class="cursor-pointer group">
+                <img src="./Icons/Watch/mangekyou1.png"
+                    class="rounded-xl w-full aspect-video object-cover transition-transform group-hover:scale-[0.98]">
+                <div class="flex mt-3 gap-3">
+                    <img src="./Icons/Avatars/Mangekyo-Avatar.jpg" class="w-9 h-9 rounded-full">
+                    <div class="flex flex-col pr-6 relative">
+                        <h3 class="text-sm font-semibold line-clamp-2">ГАЙД НА ИМБУ ОТ ТОП 1 БРУДЫ в ПАТЧЕ 7.40</h3>
+                        <p class="text-xs text-gray-400 mt-1">mangekyou</p>
                         <p class="text-xs text-gray-400">34 тыс. просмотров • 3 мес. назад</p>
                     </div>
                 </div>
             </div>
-            <div class="cursor-pointer video-card transition"><img src="./Icons/Watch/Tihon1.jpg"
-                    class="rounded-xl w-full">
-                <div class="flex mt-3 gap-3"><img src="./Icons/Avatars/Tixon-Avatar.jpg" class="w-9 h-9 rounded-full">
+
+            <div class="cursor-pointer group">
+                <img src="./Icons/Watch/Tihon1.jpg"
+                    class="rounded-xl w-full aspect-video object-cover transition-transform group-hover:scale-[0.98]">
+                <div class="flex mt-3 gap-3">
+                    <img src="./Icons/Avatars/Tixon-Avatar.jpg" class="w-9 h-9 rounded-full">
                     <div>
-                        <p class="text-sm font-semibold leading-tight">1V1 ПРОТИВ ТИКТОКЕРОВ | DEAD BY DAYLIGHT</p>
-                        <p class="text-xs text-gray-400">Тихон Елисеевич</p>
+                        <h3 class="text-sm font-semibold line-clamp-2">1V1 ПРОТИВ ТИКТОКЕРОВ | DEAD BY DAYLIGHT</h3>
+                        <p class="text-xs text-gray-400 mt-1">Тихон Елисеевич</p>
                         <p class="text-xs text-gray-400">57 тыс. просмотров • 8 мес. назад</p>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="mt-6">
-            <div class="flex items-center gap-2 mb-3"><img src="./Icons/Red_Shorts-Icon.png" class="w-6 h-6">
-                <h2 class="text-lg font-semibold">Shorts</h2>
+            <div class="cursor-pointer video-card transition">
+                <img src="./Icons/Watch/ez25_1.jpg" class="rounded-xl w-full">
+                <div class="flex mt-3 gap-3">
+                    <img src="./Icons/Avatars/EZ-25-Avatar.jpg" class="w-9 h-9 rounded-full">
+                    <div class="flex justify-between w-full">
+                        <div>
+                            <p class="text-sm font-semibold leading-tight">НАЙС ИГРАЕШЬ — ГОЛОВАЧ</p>
+                            <p class="text-xs text-gray-400">EZ 25</p>
+                            <p class="text-xs text-gray-400">842 тыс. просмотров • 2 мес. назад</p>
+                        </div>
+                        <button class="opacity-0 group-hover:opacity-100 transition p-1"><img
+                                src="./Icons/3_dots-Icon.png" class="w-5 h-5"></button>
+                    </div>
+                </div>
             </div>
-            <div class="shorts-grid-2">
-                <div class="cursor-pointer video-card transition"><img src="./Icons/Shorts/Tihon.jpg"
-                        class="rounded-xl w-full aspect-[9/16] object-cover">
-                    <div class="flex gap-2 mt-2"><img src="./Icons/Avatars/Tixon-Avatar.jpg"
-                            class="w-8 h-8 rounded-full">
+            <div class="cursor-pointer video-card transition">
+                <img src="./Icons/Watch/Golovach1.jpg" class="rounded-xl w-full">
+                <div class="flex mt-3 gap-3">
+                    <img src="./Icons/Avatars/Golovach-Avatar.jpg" class="w-9 h-9 rounded-full">
+                    <div class="flex justify-between w-full">
                         <div>
-                            <p class="text-xs font-semibold line-clamp-2">НЕОЖИДАННЫЙ ФАКТ О ЧАРАХ</p>
-                            <p class="text-xs text-gray-400">16 тыс. просмотров</p>
+                            <p class="text-sm font-semibold leading-tight">ЕМУ СНОВА ОТКЛЮЧИЛИ ВОЙС</p>
+                            <p class="text-xs text-gray-400">LenaGolovach Best Moments</p>
+                            <p class="text-xs text-gray-400">8,3 тыс. просмотров • 11 дней назад</p>
                         </div>
-                    </div>
-                </div>
-                <div class="cursor-pointer video-card transition"><img src="./Icons/Shorts/Mad1.jpg"
-                        class="rounded-xl w-full aspect-[9/16] object-cover">
-                    <div class="flex gap-2 mt-2"><img src="./Icons/Avatars/Mad-Avatar.jpg" class="w-8 h-8 rounded-full">
-                        <div>
-                            <p class="text-xs font-semibold line-clamp-2">MAD REDUX v1.0 - РЕДУКС КОТОРЫЙ ТЫ ИСКАЛ</p>
-                            <p class="text-xs text-gray-400">6,7 тыс. просмотров</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="cursor-pointer video-card transition"><img src="./Icons/Shorts/lunivra1.jpg"
-                        class="rounded-xl w-full aspect-[9/16] object-cover">
-                    <div class="flex gap-2 mt-2"><img src="./Icons/Avatars/Lunivra-Avatar.jpg"
-                            class="w-8 h-8 rounded-full">
-                        <div>
-                            <p class="text-xs font-semibold line-clamp-2">ЭТОТ ПЕРК НУЖЕН В ВАШЕМ БИЛДЕ</p>
-                            <p class="text-xs text-gray-400">113 тыс. просмотров</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="cursor-pointer video-card transition"><img src="./Icons/Shorts/Fleksym1.jpg"
-                        class="rounded-xl w-full aspect-[9/16] object-cover">
-                    <div class="flex gap-2 mt-2"><img src="./Icons/Avatars/Fleksym-Avatar.jpg"
-                            class="w-8 h-8 rounded-full">
-                        <div>
-                            <p class="text-xs font-semibold line-clamp-2">Стабильный БИЛД в ДБД</p>
-                            <p class="text-xs text-gray-400">7,7 тыс. просмотров</p>
-                        </div>
+                        <button class="opacity-0 group-hover:opacity-100 transition p-1"><img
+                                src="./Icons/3_dots-Icon.png" class="w-5 h-5"></button>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="video-grid-1 mt-6">
-            <div class="cursor-pointer video-card transition"><img src="./Icons/Watch/ez25_1.jpg"
-                    class="rounded-xl w-full">
-                <div class="flex mt-3 gap-3"><img src="./Icons/Avatars/EZ-25-Avatar.jpg" class="w-9 h-9 rounded-full">
-                    <div>
-                        <p class="text-sm font-semibold leading-tight">НАЙС ИГРАЕШЬ — ГОЛОВАЧ</p>
-                        <p class="text-xs text-gray-400">EZ 25</p>
-                        <p class="text-xs text-gray-400">842 тыс. просмотров • 2 мес. назад</p>
-                    </div>
-                </div>
+        <section class="mt-10 pb-8">
+            <div class="flex items-center gap-2 mb-4 px-1">
+                <img src="./Icons/Red_Shorts-Icon.png" class="w-6 h-6">
+                <span class="font-bold text-xl tracking-tight">Shorts</span>
             </div>
-            <div class="cursor-pointer video-card transition"><img src="./Icons/Watch/Golovach1.jpg"
-                    class="rounded-xl w-full">
-                <div class="flex mt-3 gap-3"><img src="./Icons/Avatars/Golovach-Avatar.jpg"
-                        class="w-9 h-9 rounded-full">
-                    <div>
-                        <p class="text-sm font-semibold leading-tight">ЕМУ СНОВА ОТКЛЮЧИЛИ ВОЙС</p>
-                        <p class="text-xs text-gray-400">LenaGolovach Best Moments</p>
-                        <p class="text-xs text-gray-400">8,3 тыс. просмотров • 11 дней назад</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="mt-6">
-            <div class="flex items-center gap-2 mb-3"><img src="./Icons/Red_Shorts-Icon.png" class="w-6 h-6">
-                <h2 class="text-lg font-semibold">Shorts</h2>
-            </div>
-            <div class="shorts-grid-2">
-                <div class="cursor-pointer video-card transition"><img src="./Icons/Shorts/toshagank.jpg"
-                        class="rounded-xl w-full aspect-[9/16] object-cover">
-                    <div class="flex gap-2 mt-2"><img src="./Icons/Avatars/toshagank-Avatar.jpg"
-                            class="w-8 h-8 rounded-full">
-                        <div>
-                            <p class="text-xs font-semibold line-clamp-2">тот момент на Troll Warlord</p>
-                            <p class="text-xs text-gray-400">732 тыс. просмотров</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="cursor-pointer video-card transition"><img src="./Icons/Shorts/Kuplinov1.jpg"
-                        class="rounded-xl w-full aspect-[9/16] object-cover">
-                    <div class="flex gap-2 mt-2"><img src="./Icons/Avatars/KUPLINOV_Shorts1-Avatar.jpg"
-                            class="w-8 h-8 rounded-full">
-                        <div>
-                            <p class="text-xs font-semibold line-clamp-2">Всё украли! ► Kuplinov</p>
-                            <p class="text-xs text-gray-400">457 тыс. просмотров</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="cursor-pointer video-card transition"><img src="./Icons/Shorts/wild1.jpg"
-                        class="rounded-xl w-full aspect-[9/16] object-cover">
-                    <div class="flex gap-2 mt-2"><img src="./Icons/Avatars/WIld-Avatar.jpg"
-                            class="w-8 h-8 rounded-full">
-                        <div>
-                            <p class="text-xs font-semibold line-clamp-2">Unexpected CONFLICT Between TWO Hunters!</p>
-                            <p class="text-xs text-gray-400">5,4 млн просмотров</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="cursor-pointer video-card transition"><img src="./Icons/Shorts/Moments1.jpg"
-                        class="rounded-xl w-full aspect-[9/16] object-cover">
-                    <div class="flex gap-2 mt-2"><img src="./Icons/Avatars/Moments-Avatar.jpg"
-                            class="w-8 h-8 rounded-full">
-                        <div>
-                            <p class="text-xs font-semibold line-clamp-2">Розыгрыш пошёл не по плану</p>
-                            <p class="text-xs text-gray-400">1,8 млн просмотров</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="video-grid-1 mt-6">
-            <div class="cursor-pointer video-card transition"><img src="./Icons/Watch/laugh1.jpg"
-                    class="rounded-xl w-full">
-                <div class="flex mt-3 gap-3"><img src="./Icons/Avatars/Venom-Avatar.jpg" class="w-9 h-9 rounded-full">
-                    <div>
-                        <p class="text-sm font-semibold leading-tight">you laugh, you lose venom</p>
-                        <p class="text-xs text-gray-400">749 тыс. просмотров • 8 месяцев назад</p>
-                    </div>
-                </div>
-            </div>
-            <div class="cursor-pointer video-card transition"><img src="./Icons/Watch/Borat1.png"
-                    class="rounded-xl w-full">
-                <div class="flex mt-3 gap-3"><img src="./Icons/Avatars/Borat-Avatar.jpg" class="w-9 h-9 rounded-full">
-                    <div>
-                        <p class="text-sm font-semibold leading-tight">Борат в Resident Evil 4</p>
-                        <p class="text-xs text-gray-400">3,2 млн. просмотров • 2 года назад</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="mt-6">
-            <div class="flex items-center gap-2 mb-3"><img src="./Icons/Red_Shorts-Icon.png" class="w-6 h-6">
-                <h2 class="text-lg font-semibold">Shorts</h2>
-            </div>
-            <div class="shorts-grid-2">
-                <div class="cursor-pointer video-card transition"><img src="./Icons/Shorts/Premia1.jpg"
-                        class="rounded-xl w-full aspect-[9/16] object-cover">
-                    <div class="flex gap-2 mt-2"><img src="./Icons/Avatars/Premia-Avatar.jpg"
-                            class="w-8 h-8 rounded-full">
-                        <div>
-                            <p class="text-xs font-semibold line-clamp-2">Что за символ? Не пойму</p>
-                            <p class="text-xs text-gray-400">13 млн просмотров</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="cursor-pointer video-card transition"><img src="./Icons/Shorts/dushnila.jpg"
-                        class="rounded-xl w-full aspect-[9/16] object-cover">
-                    <div class="flex gap-2 mt-2"><img src="./Icons/Avatars/Dushnila.jpg" class="w-8 h-8 rounded-full">
-                        <div>
-                            <p class="text-xs font-semibold line-clamp-2">МИФЫ № 9</p>
-                            <p class="text-xs text-gray-400">5,2 млн просмотров</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="cursor-pointer video-card transition"><img src="./Icons/Shorts/Fakto1.jpg"
-                        class="rounded-xl w-full aspect-[9/16] object-cover">
-                    <div class="flex gap-2 mt-2"><img src="./Icons/Avatars/Fakto-Avatar.jpg"
-                            class="w-8 h-8 rounded-full">
-                        <div>
-                            <p class="text-xs font-semibold line-clamp-2">ТАК РАБОТАЕТ ИНТЕРНЕТ</p>
-                            <p class="text-xs text-gray-400">3 млн просмотров</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="cursor-pointer video-card transition"><img src="./Icons/Shorts/inside.jpg"
-                        class="rounded-xl w-full aspect-[9/16] object-cover">
-                    <div class="flex gap-2 mt-2"><img src="./Icons/Avatars/Inside-Avatar.jpg"
-                            class="w-8 h-8 rounded-full">
-                        <div>
-                            <p class="text-xs font-semibold line-clamp-2">Ошибка природы: Почему змеи едят сами себя?
-                            </p>
-                            <p class="text-xs text-gray-400">1,9 млн просмотров</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="video-grid-1 mt-6">
-            <div class="cursor-pointer video-card transition"><img src="./Icons/Watch/Dbd1.jpg"
-                    class="rounded-xl w-full">
-                <div class="flex mt-3 gap-3"><img src="./Icons/Avatars/Dbd_Things-Avatar.jpg"
-                        class="w-9 h-9 rounded-full">
-                    <div>
-                        <p class="text-sm font-semibold leading-tight">Confession of a Nurse Main</p>
-                        <p class="text-xs text-gray-400">553 тыс. просмотров • 3 года назад</p>
-                    </div>
-                </div>
-            </div>
-            <div class="cursor-pointer video-card transition"><img src="./Icons/Watch/Quiz1.jpg"
-                    class="rounded-xl w-full">
-                <div class="flex mt-3 gap-3"><img src="./Icons/Avatars/Quiz-Avatar.jpg" class="w-9 h-9 rounded-full">
-                    <div>
-                        <p class="text-sm font-semibold leading-tight">Guess the Horror Movie</p>
-                        <p class="text-xs text-gray-400">949 тыс. просмотров • 1 год назад</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <div class="bottom-nav">
-        <div class="bottom-nav-item"><img src="./Icons/Main-Icon.png"><span>Главная</span></div>
-        <div class="bottom-nav-item"><img src="./Icons/Shorts-Icon.png"><span>Shorts</span></div>
-        <div class="bottom-nav-item"><img src="./Icons/Subscrition-Icon.png"><span>Подписки</span></div>
-        <div class="bottom-nav-item"><img src="./Icons/Avatars/Avatar-Icon.png"
-                style="border-radius: 50%;"><span>Вы</span></div>
-    </div>
+            <div
+                class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 justify-items-stretch">
+
+                <div class="cursor-pointer group w-full">
+                    <div class="relative aspect-[9/16] overflow-hidden rounded-xl bg-[#272727]">
+                        <img src="./Icons/Shorts/Tihon.jpg"
+                            class="w-full h-full object-cover transition-transform group-hover:scale-105">
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
+                            <p class="text-sm font-semibold line-clamp-2">НЕОЖИДАННЫЙ ФАКТ О ЧАРАХ</p>
+                            <p class="text-xs text-gray-200 mt-1">16 тыс. просмотров</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cursor-pointer group w-full">
+                    <div class="relative aspect-[9/16] overflow-hidden rounded-xl bg-[#272727]">
+                        <img src="./Icons/Shorts/lunivra1.jpg"
+                            class="w-full h-full object-cover transition-transform group-hover:scale-105">
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
+                            <p class="text-sm font-semibold line-clamp-2">ЭТОТ ПЕРК НУЖЕН В ВАШЕМ БИЛДЕ</p>
+                            <p class="text-xs text-gray-200 mt-1">113 тыс. просмотров</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cursor-pointer group w-full">
+                    <div class="relative aspect-[9/16] overflow-hidden rounded-xl bg-[#272727]">
+                        <img src="./Icons/Shorts/Mad1.jpg"
+                            class="w-full h-full object-cover transition-transform group-hover:scale-105">
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
+                            <p class="text-sm font-semibold line-clamp-2">MAD REDUX v1.0 - РЕДУКС КОТОРЫЙ ТЫ ИСКАЛ</p>
+                            <p class="text-xs text-gray-200 mt-1">6,7 тыс. просмотров</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cursor-pointer group w-full">
+                    <div class="relative aspect-[9/16] overflow-hidden rounded-xl bg-[#272727]">
+                        <img src="./Icons/Shorts/Fleksym1.jpg"
+                            class="w-full h-full object-cover transition-transform group-hover:scale-105">
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
+                            <p class="text-sm font-semibold line-clamp-2">Стабильный БИЛД в ДБД</p>
+                            <p class="text-xs text-gray-200 mt-1">7,7 тыс. просмотров</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cursor-pointer group w-full">
+                    <div class="relative aspect-[9/16] overflow-hidden rounded-xl bg-[#272727]">
+                        <img src="./Icons/Shorts/toshagank.jpg"
+                            class="w-full h-full object-cover transition-transform group-hover:scale-105">
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
+                            <p class="text-sm font-semibold line-clamp-2">тот момент на Troll Warlord</p>
+                            <p class="text-xs text-gray-200 mt-1">732 тыс. просмотров</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cursor-pointer group w-full">
+                    <div class="relative aspect-[9/16] overflow-hidden rounded-xl bg-[#272727]">
+                        <img src="./Icons/Shorts/Kuplinov1.jpg"
+                            class="w-full h-full object-cover transition-transform group-hover:scale-105">
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
+                            <p class="text-sm font-semibold line-clamp-2">Всё украли! ► Kuplinov</p>
+                            <p class="text-xs text-gray-200 mt-1">457 тыс. просмотров</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 gap-y-8 mt-4">
+            <div class="cursor-pointer group">
+                <img src="./Icons/Watch/laugh1.jpg"
+                    class="rounded-xl w-full aspect-video object-cover transition-transform group-hover:scale-[0.98]">
+                <div class="flex mt-3 gap-3">
+                    <img src="./Icons/Avatars/Venom-Avatar.jpg" class="w-9 h-9 rounded-full">
+                    <div class="flex flex-col pr-6 relative">
+                        <h3 class="text-sm font-semibold line-clamp-2">you laugh, you lose</h3>
+                        <p class="text-xs text-gray-400 mt-1">mangekyou</p>
+                        <p class="text-xs text-gray-400">34 тыс. просмотров • 3 мес. назад</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cursor-pointer group">
+                <img src="./Icons/Watch/Borat1.png"
+                    class="rounded-xl w-full aspect-video object-cover transition-transform group-hover:scale-[0.98]">
+                <div class="flex mt-3 gap-3">
+                    <img src="./Icons/Avatars/Borat-Avatar.jpg" class="w-9 h-9 rounded-full">
+                    <div>
+                        <h3 class="text-sm font-semibold line-clamp-2">Борат в Resident Evil 4</h3>
+                        <p class="text-xs text-gray-400 mt-1">eli_handle_b.wav</p>
+                        <p class="text-xs text-gray-400">57 тыс. просмотров • 8 мес. назад</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cursor-pointer video-card transition">
+                <img src="./Icons/Watch/Dbd1.jpg" class="rounded-xl w-full">
+                <div class="flex mt-3 gap-3">
+                    <img src="./Icons/Avatars/Dbd_Things-Avatar.jpg" class="w-9 h-9 rounded-full">
+                    <div class="flex justify-between w-full">
+                        <div>
+                            <p class="text-sm font-semibold leading-tight">Confession of a Nurse Main</p>
+                            <p class="text-xs text-gray-400">DBD Things</p>
+                            <p class="text-xs text-gray-400"> 553 тыс. просмотров • 3 года назад</p>
+                        </div>
+                        <button class="opacity-0 group-hover:opacity-100 transition p-1"><img
+                                src="./Icons/3_dots-Icon.png" class="w-5 h-5"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="cursor-pointer video-card transition">
+                <img src="./Icons/Watch/Quiz1.jpg" class="rounded-xl w-full">
+                <div class="flex mt-3 gap-3">
+                    <img src="./Icons/Avatars/Quiz-Avatar.jpg" class="w-9 h-9 rounded-full">
+                    <div class="flex justify-between w-full">
+                        <div>
+                            <p class="text-sm font-semibold leading-tight">Guess the Horror Movie</p>
+                            <p class="text-xs text-gray-400">Fun QUiz Questions</p>
+                            <p class="text-xs text-gray-400">949 тыс. просмотров • 1 год назад</p>
+                        </div>
+                        <button class="opacity-0 group-hover:opacity-100 transition p-1"><img
+                                src="./Icons/3_dots-Icon.png" class="w-5 h-5"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="mt-10 pb-8">
+            <div class="flex items-center gap-2 mb-4 px-1">
+                <img src="./Icons/Red_Shorts-Icon.png" class="w-6 h-6">
+                <span class="font-bold text-xl tracking-tight">Shorts</span>
+            </div>
+
+            <div
+                class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 justify-items-stretch">
+
+                <div class="cursor-pointer group w-full">
+                    <div class="relative aspect-[9/16] overflow-hidden rounded-xl bg-[#272727]">
+                        <img src="./Icons/Shorts/wild1.jpg"
+                            class="w-full h-full object-cover transition-transform group-hover:scale-105">
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
+                            <p class="text-sm font-semibold line-clamp-2">Unexpected CONFLICT Between TWO Hunters!</p>
+                            <p class="text-xs text-gray-200 mt-1">5,4 млн просмотров</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cursor-pointer group w-full">
+                    <div class="relative aspect-[9/16] overflow-hidden rounded-xl bg-[#272727]">
+                        <img src="./Icons/Shorts/Moments1.jpg"
+                            class="w-full h-full object-cover transition-transform group-hover:scale-105">
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
+                            <p class="text-sm font-semibold line-clamp-2">Розыгрыш пошёл не по плану</p>
+                            <p class="text-xs text-gray-200 mt-1">1,8 млн просмотров</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cursor-pointer group w-full">
+                    <div class="relative aspect-[9/16] overflow-hidden rounded-xl bg-[#272727]">
+                        <img src="./Icons/Shorts/Premia1.jpg"
+                            class="w-full h-full object-cover transition-transform group-hover:scale-105">
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
+                            <p class="text-sm font-semibold line-clamp-2">Что за символ? Не пойму</p>
+                            <p class="text-xs text-gray-200 mt-1">13 млн просмотров</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cursor-pointer group w-full">
+                    <div class="relative aspect-[9/16] overflow-hidden rounded-xl bg-[#272727]">
+                        <img src="./Icons/Shorts/dushnila.jpg"
+                            class="w-full h-full object-cover transition-transform group-hover:scale-105">
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
+                            <p class="text-sm font-semibold line-clamp-2">МИФЫ № 9</p>
+                            <p class="text-xs text-gray-200 mt-1">5,2 млн просмотров</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cursor-pointer group w-full">
+                    <div class="relative aspect-[9/16] overflow-hidden rounded-xl bg-[#272727]">
+                        <img src="./Icons/Shorts/Fakto1.jpg"
+                            class="w-full h-full object-cover transition-transform group-hover:scale-105">
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
+                            <p class="text-sm font-semibold line-clamp-2">ТАК РАБОТАЕТ ИНТЕРНЕТ</p>
+                            <p class="text-xs text-gray-200 mt-1">3 млн просмотров</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cursor-pointer group w-full">
+                    <div class="relative aspect-[9/16] overflow-hidden rounded-xl bg-[#272727]">
+                        <img src="./Icons/Shorts/inside.jpg"
+                            class="w-full h-full object-cover transition-transform group-hover:scale-105">
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
+                            <p class="text-sm font-semibold line-clamp-2">Ошибка природы: Почему змеи едят сами себя?</p>
+                            <p class="text-xs text-gray-200 mt-1">1,9 млн просмотров</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <nav
+        class="md:hidden fixed bottom-0 left-0 right-0 bg-[#0F0F0F]/95 border-t border-[#272727] flex justify-around py-3 z-50">
+        <img src="./Icons/Main-Icon.png" class="w-6 h-6">
+        <img src="./Icons/Shorts-Icon.png" class="w-6 h-6">
+        <img src="./Icons/Subscrition-Icon.png" class="w-6 h-6">
+        <img src="./Icons/Avatars/Avatar-Icon.png" class="w-6 h-6 rounded-full">
+    </nav>
+
 </body>
 
 </html>
