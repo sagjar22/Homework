@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="./Icons/Better-Favicon.png">
+</head>
+<style>
+    body {
+        background-color: #0F0F0F;
+        color: white;
+    }
+
+    .profile-menu {
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-10px);
+        transition: all 0.2s ease;
+    }
+
+    .profile-wrapper:hover .profile-menu {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    .profile-menu-scroll::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .profile-menu-scroll::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+
+    .profile-menu-scroll::-webkit-scrollbar-thumb {
+        background-color: #717171;
+        border-radius: 4px;
+    }
+</style>
+</head>
+
+<body class="font-[Roboto,Arial,sans-serif] overflow-x-hidden">
+
+    <header
+        class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-5 py-2 bg-[#0F0F0F]/95 backdrop-blur-md h-14">
+        <div class="flex items-center gap-4 shrink-0">
+            <button class="p-2 hover:bg-[#272727] rounded-full transition">
+                <img src="./Icons/Black-Burg-Icon.png" alt="menu" class="w-6 h-6 invert">
+            </button>
+            <div class="flex items-center cursor-pointer">
+                <img src="./Icons/Better-Favicon.png" alt="logo" class="w-9 h-8">
+                <span class="font-bold text-xl tracking-tighter ml-1 hidden sm:block">YouTube</span>
+            </div>
+        </div>
+
+        <div class="flex-1 max-w-[720px] px-4 flex items-center justify-center gap-4">
+            <form class="flex w-full items-center">
+                <div class="flex w-full relative">
+                    <input type="text" placeholder="Введите запрос"
+                        class="w-full bg-[#121212] border border-[#303030] h-10 px-4 rounded-l-full outline-none focus:border-blue-500 text-[16px]">
+                    <button type="button"
+                        class="absolute right-3 top-1/2 -translate-y-1/2 p-1 hover:bg-[#272727] rounded-full">
+                        <img src="./Icons/Black-Kayboard-Icon.png" alt="keyboard" class="w-5 h-5 invert opacity-70">
+                    </button>
+                </div>
+                <button
+                    class="bg-[#272727] h-10 px-6 border border-l-0 border-[#303030] rounded-r-full hover:bg-[#3a3a3a] flex items-center justify-center">
+                    <img src="./Icons/Black-Glass-Icon.png" class="w-5 h-5 invert opacity-70">
+                </button>
+            </form>
+            <button
+                class="bg-[#181818] w-10 h-10 flex items-center justify-center rounded-full hover:bg-[#3a3a3a] hidden sm:flex shrink-0">
+                <img src="./Icons/Black-Micro-Icon.png" class="w-5 h-5 invert">
+            </button>
+        </div>
+
+        <div class="flex items-center gap-1 shrink-0 relative pr-2">
+            <button class="flex items-center gap-2.5 bg-[#272727] px-4 h-10 rounded-full hover:bg-[#3a3a3a] transition">
+                <img src="./Icons/Black-Add.png" class="w-4 h-4 invert"> <span
+                    class="font-medium text-sm">Создать</span>
+            </button>
+            <button class="p-2.5 hover:bg-[#272727] rounded-full transition relative">
+                <img src="./Icons/Not-Icon.png" class="w-6 h-6 invert">
+                <span
+                    class="absolute top-1.5 right-1.5 bg-red-600 text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">2</span>
+            </button>
+
+            <div class="profile-wrapper relative py-1">
+                <button class="p-1 hover:bg-[#272727] rounded-full transition ml-1">
+                    <img src="./Icons/Avatars/Avatar-Icon.png" alt="avatar"
+                        class="w-8 h-8 rounded-full border border-zinc-600">
+                </button>
+
+                <div
+                    class="profile-menu absolute top-12 right-0 w-[300px] bg-[#282828] rounded-xl shadow-2xl border border-[#3f3f3f] z-50 overflow-hidden">
+                    <div class="flex gap-4 p-4 border-b border-[#3f3f3f]">
+                        <img src="./Icons/Avatars/Avatar-Icon.png"
+                            class="w-10 h-10 rounded-full border border-zinc-600 shrink-0">
+                        <div class="flex flex-col">
+                            <p class="font-medium text-[16px]">kusaka6e</p>
+                            <p class="text-sm text-[#AAAAAA]">@Nujiu</p>
+                            <a href="#"
+                                class="text-sm text-[#3EA6FF] hover:text-[#3EA6FF]/80 mt-1 transition">Посмотреть
+                                канал</a>
+                        </div>
+                    </div>
+
+                    <div class="profile-menu-scroll max-h-[400px] overflow-y-auto py-2">
+                        <div class="border-b border-[#3f3f3f] pb-2 mb-2">
+                            <a href="#"
+                                class="flex items-center gap-4 px-4 py-2.5 hover:bg-[#3e3e3e] transition text-sm">
+                                <img src="./Icons/Google-Icon.png" class="w-5 h-5 invert"> <span>Аккаунт Google</span>
+                            </a>
+                            <a href="#"
+                                class="flex items-center gap-4 px-4 py-2.5 hover:bg-[#3e3e3e] transition text-sm justify-between">
+                                <div class="flex items-center gap-4">
+                                    <img src="./Icons/Accounts-Icon.png" class="w-5 h-5 invert"> <span>Сменить
+                                        аккаунт</span>
+                                </div>
+                                <img src="./Icons/Arrow-Right.png" class="w-4 h-4 invert opacity-60">
+                            </a>
+                            <a href="#"
+                                class="flex items-center gap-4 px-4 py-2.5 hover:bg-[#3e3e3e] transition text-sm">
+                                <img src="./Icons/Out-Icon.png" class="w-5 h-5 invert"> <span>Выйти</span>
+                            </a>
+                        </div>
+
+                        <div class="border-b border-[#3f3f3f] pb-2 mb-2">
+                            <a href="#"
+                                class="flex items-center gap-4 px-4 py-2.5 hover:bg-[#3e3e3e] transition text-sm">
+                                <img src="./Icons/Studio-Icon.png" class="w-5 h-5 invert"> <span>Творческая студия
+                                    YouTube</span>
+                            </a>
+                            <a href="#"
+                                class="flex items-center gap-4 px-4 py-2.5 hover:bg-[#3e3e3e] transition text-sm">
+                                <img src="./Icons/P-Icon.png" class="w-5 h-5"> <span>Преимущества Premium</span>
+                            </a>
+                            <a href="#"
+                                class="flex items-center gap-4 px-4 py-2.5 hover:bg-[#3e3e3e] transition text-sm">
+                                <img src="./Icons/Coin-Icon.png" class="w-5 h-5 invert"> <span>Покупки и платные
+                                    подписки</span>
+                            </a>
+                        </div>
+
+                        <div class="border-b border-[#3f3f3f] pb-2 mb-2">
+                            <a href="#"
+                                class="flex items-center gap-4 px-4 py-2.5 hover:bg-[#3e3e3e] transition text-sm">
+                                <img src="./Icons/Your-Security.png" class="w-5 h-5 invert"> <span>Ваши данные на
+                                    YouTube</span>
+                            </a>
+                            <a href="#"
+                                class="flex items-center gap-4 px-4 py-2.5 hover:bg-[#3e3e3e] transition text-sm justify-between">
+                                <div class="flex items-center gap-4">
+                                    <img src="./Icons/Moon-Icon.png" class="w-5 h-5 invert"> <span>Тема: как на
+                                        устройстве</span>
+                                </div>
+                                <img src="./Icons/Arrow-Right.png" class="w-4 h-4 invert opacity-60">
+                            </a>
+                            <a href="#"
+                                class="flex items-center gap-4 px-4 py-2.5 hover:bg-[#3e3e3e] transition text-sm justify-between">
+                                <div class="flex items-center gap-4">
+                                    <img src="./Icons/Translate-Icon.png" class="w-5 h-5 invert"> <span>Язык интерфейса:
+                                        Русский</span>
+                                </div>
+                                <img src="./Icons/Arrow-Right.png" class="w-4 h-4 invert opacity-60">
+                            </a>
+                            <a href="#"
+                                class="flex items-center gap-4 px-4 py-2.5 hover:bg-[#3e3e3e] transition text-sm justify-between">
+                                <div class="flex items-center gap-4">
+                                    <img src="./Icons/Safety-Icon.png" class="w-5 h-5 invert"> <span>Безопасный
+                                        режим: откл.</span>
+                                </div>
+                                <img src="./Icons/Arrow-Right.png" class="w-4 h-4 invert opacity-60">
+                            </a>
+                            <a href="#"
+                                class="flex items-center gap-4 px-4 py-2.5 hover:bg-[#3e3e3e] transition text-sm justify-between">
+                                <div class="flex items-center gap-4">
+                                    <img src="./Icons/Country-Icon.png" class="w-5 h-5 invert"> <span>Страна:
+                                        Украина</span>
+                                </div>
+                                <img src="./Icons/Arrow-Right.png" class="w-4 h-4 invert opacity-60">
+                            </a>
+                            <a href="#"
+                                class="flex items-center gap-4 px-4 py-2.5 hover:bg-[#3e3e3e] transition text-sm">
+                                <img src="./Icons/Black-Kayboard-Icon.png" class="w-5 h-5 invert"> <span>Быстрые
+                                    клавиши</span>
+                            </a>
+                        </div>
+
+                        <div>
+                            <a href="#"
+                                class="flex items-center gap-4 px-4 py-2.5 bg-[#3e3e3e] text-sm font-medium border-l-4 border-[#3EA6FF] -ml-1 pl-3.5">
+                                <img src="./Icons/Settings-Icon.png" class="w-5 h-5 invert"> <span>Настройки</span>
+                            </a>
+                            <a href="#"
+                                class="flex items-center gap-4 px-4 py-2.5 hover:bg-[#3e3e3e] transition text-sm">
+                                <img src="./Icons/Spravka-Icon.png" class="w-5 h-5 invert"> <span>Справка</span>
+                            </a>
+                            <a href="#"
+                                class="flex items-center gap-4 px-4 py-2.5 hover:bg-[#3e3e3e] transition text-sm">
+                                <img src="./Icons/Report-Icon.png" class="w-5 h-5 invert"> <span>Отправить
+                                    отзыв</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-14 flex min-h-screen bg-[#0F0F0F]">
+
+        <div class="fixed left-0 top-14 bottom-0 w-[240px] bg-[#0F0F0F] hidden lg:block pt-4 px-4 z-40">
+            <h2 class="text-white text-[16px] font-bold py-3 px-3 mb-1">Настройки</h2>
+            <nav class="flex flex-col gap-0.5">
+                <div class="bg-[#272727] text-white text-[14px] font-medium py-2.5 px-4 rounded-xl cursor-pointer">
+                    Аккаунт
+                </div>
+                <div
+                    class="text-[#F1F1F1] text-[14px] py-2.5 px-4 rounded-xl hover:bg-[#272727] cursor-pointer transition">
+                    Уведомления
+                </div>
+                <div
+                    class="text-[#F1F1F1] text-[14px] py-2.5 px-4 rounded-xl hover:bg-[#272727] cursor-pointer transition">
+                    Воспроизведение
+                </div>
+                <div
+                    class="text-[#F1F1F1] text-[14px] py-2.5 px-4 rounded-xl hover:bg-[#272727] cursor-pointer transition">
+                    Скачивание контента
+                </div>
+                <div
+                    class="text-[#F1F1F1] text-[14px] py-2.5 px-4 rounded-xl hover:bg-[#272727] cursor-pointer transition">
+                    Конфиденциальность
+                </div>
+                <div
+                    class="text-[#F1F1F1] text-[14px] py-2.5 px-4 rounded-xl hover:bg-[#272727] cursor-pointer transition">
+                    Связанные приложения
+                </div>
+                <div
+                    class="text-[#F1F1F1] text-[14px] py-2.5 px-4 rounded-xl hover:bg-[#272727] cursor-pointer transition truncate">
+                    Покупки и платные подписки
+                </div>
+                <div
+                    class="text-[#F1F1F1] text-[14px] py-2.5 px-4 rounded-xl hover:bg-[#272727] cursor-pointer transition">
+                    Расчеты и платежи
+                </div>
+                <div
+                    class="text-[#F1F1F1] text-[14px] py-2.5 px-4 rounded-xl hover:bg-[#272727] cursor-pointer transition">
+                    Расширенные настройки
+                </div>
+            </nav>
+        </div>
+
+        <div class="flex-1 lg:ml-[240px] flex justify-center">
+
+            <div class="w-full max-w-[1100px] pt-8 px-6 lg:px-12 xl:px-20">
+                <h1 class="text-2xl font-medium mb-1.5 tracking-tight">Аккаунт</h1>
+                <p class="text-[#AAAAAA] text-[15px] mb-8">Выберите сведения о себе и настройте доступ к функциям
+                    YouTube</p>
+
+                <div class="flex justify-between items-start py-8 border-b border-[#303030]/80">
+                    <div class="flex-1">
+                        <h3 class="font-bold text-[17px] mb-1 tracking-tight">Ваш канал YouTube</h3>
+                        <p class="text-[14px] text-[#AAAAAA] leading-relaxed">Чтобы загружать ролики и оставлять
+                            комментарии, создавать плейлисты и пользоваться другими функциями YouTube, нужно создать
+                            канал.</p>
+
+                        <div class="flex items-center gap-5 mt-7">
+                            <img src="./Icons/Avatars/Avatar-Icon.png"
+                                class="w-16 h-16 rounded-full border border-zinc-700">
+                            <div>
+                                <p class="font-medium text-[17px]">kusaka6e</p>
+                                <div class="flex flex-col gap-1.5 mt-2.5">
+                                    <a href="#" class="text-[#3EA6FF] text-[14px] hover:underline">Статус канала и
+                                        доступные функции</a>
+                                    <a href="#" class="text-[#3EA6FF] text-[14px] hover:underline">Создать канал</a>
+                                    <a href="#" class="text-[#3EA6FF] text-[14px] hover:underline">Перейти к расширенным
+                                        настройкам</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hidden md:block shrink-0 ml-10">
+                        <div
+                            class="w-[140px] h-[140px] bg-[#272727] rounded-full flex items-center justify-center relative overflow-hidden">
+                            <div
+                                class="absolute inset-2 border-2 border-dashed border-[#AAAAAA]/20 rounded-full flex items-center justify-center">
+                                <img src="./Icons/Idk.png" class="w-20 h-20 opacity-80">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="py-10 border-b border-[#303030]/80">
+                    <h3 class="font-bold text-[17px] mb-1.5 tracking-tight">Ваш аккаунт</h3>
+                    <p class="text-[14px] text-[#AAAAAA] mb-8 leading-relaxed">Для входа на YouTube используется аккаунт
+                        Google.</p>
+
+                    <div class="grid grid-cols-[220px_1fr] gap-x-6 gap-y-8 items-start">
+                        <span class="text-[14px] font-medium pt-0.5">Аккаунт Google</span>
+                        <div>
+                            <a href="#" class="text-[#3EA6FF] text-[14px] hover:underline block">Настроить аккаунт
+                                Google</a>
+                            <p class="text-xs text-[#AAAAAA] mt-1.5 leading-relaxed">Вы будете перенаправлены на
+                                страницу аккаунта.</p>
+                        </div>
+
+                        <span class="text-[14px] font-medium pt-0.5">Семейный центр</span>
+                        <div>
+                            <a href="#" class="text-[#3EA6FF] text-[14px] hover:underline block">Настроить детские
+                                профили и родительский контроль</a>
+                            <p class="text-xs text-[#AAAAAA] mt-1.5 leading-relaxed">Инструменты для родителей, детей и
+                                подростков на YouTube</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="py-10">
+                    <div class="grid grid-cols-[220px_1fr] gap-x-6 items-start">
+                        <span class="text-[14px] font-medium pt-0.5">Подписка</span>
+                        <div>
+                            <p class="text-[14px]">Подписка YouTube Premium | <a href="#"
+                                    class="text-[#3EA6FF] hover:underline font-medium">Ваша подписка</a></p>
+                            <p class="text-xs text-[#AAAAAA] mt-1.5 leading-relaxed">Музыка в фоновом режиме, видео без
+                                рекламы и многое другое.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>
