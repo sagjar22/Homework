@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ГАЙД НА ИМБУ ОТ ТОП 1 БРУДЫ в ПАТЧЕ 7.40</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="../Coursework/Icons/Better-Favicon.png">
+    <style>
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-white bg-[#0F0F0F]">
+
+    <header
+        class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 py-2 bg-[#0F0F0F]/95 backdrop-blur-md">
+        <div class="flex items-center gap-4 shrink-0">
+            <button class="p-2 hover:bg-[#272727] rounded-full transition">
+                <img src="./Icons/BurgerIcon.png" alt="menu" class="w-7 h-7">
+            </button>
+            <div class="flex items-center cursor-pointer">
+                <img src="./Icons/Better-Favicon.png" alt="logo" class="w-10 h-9">
+                <span class="font-semibold text-lg ml-1 hidden sm:block">YouTube</span>
+            </div>
+        </div>
+
+        <div class="flex-1 max-w-[720px] px-4 flex items-center gap-2 justify-center">
+            <form class="flex w-full max-w-2xl">
+                <input type="text" placeholder="Введите запрос"
+                    class="w-full bg-[#121212] border border-[#303030] px-4 py-2 rounded-l-full outline-none focus:border-blue-500">
+                <button class="px-3 py-2 border border-[#333333] border-l-0 bg-[#121212] cursor-pointer">
+                    <img src="./Icons/Keyboard-Icon.png" alt="keyboard" class="w-5 h-5">
+                </button>
+                <button class="bg-[#272727] px-5 border border-l-0 border-[#303030] rounded-r-full hover:bg-[#3a3a3a]">
+                    <img src="./Icons/Magnifying-Glass-Icon.png" class="w-5 h-5">
+                </button>
+            </form>
+            <button class="bg-[#272727] p-2.5 rounded-full hover:bg-[#3a3a3a] hidden sm:block">
+                <img src="./Icons/Micro-Icon.png" class="w-5 h-5">
+            </button>
+        </div>
+
+        <div class="flex items-center gap-3 shrink-0">
+            <button
+                class="hidden md:flex items-center gap-2 bg-[#272727] px-4 py-2 rounded-full hover:bg-[#3a3a3a] font-semibold text-sm transition">
+                <img src="./Icons/Add-Icon.png" class="w-5 h-5"> <span>Создать</span>
+            </button>
+            <button class="p-2 hover:bg-[#272727] rounded-full transition">
+                <img src="./Icons/Notification-Icon.png" class="w-7 h-7">
+            </button>
+            <button class="p-1 hover:bg-[#272727] rounded-full transition">
+                <img src="./Icons/Avatars/Avatar-Icon.png" alt="avatar" class="w-8 h-8 rounded-full">
+            </button>
+        </div>
+    </header>
+
+    <main class="pt-20 px-4 md:px-6 lg:flex gap-6 max-w-none mx-auto">
+
+        <div class="lg:w-[72%] flex-grow">
+
+            <div
+                class="relative aspect-video w-full rounded-xl overflow-hidden bg-black group cursor-pointer shadow-lg">
+                <img src="./Icons/Watch/mangekyou1.png" class="w-full h-full object-cover">
+
+                <div
+                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-4 z-10">
+                    <div
+                        class="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black/60 to-transparent pointer-events-none">
+                    </div>
+
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div
+                            class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:scale-110 transition-transform shadow-xl">
+                            <div class="border-l-[18px] border-l-white border-y-[12px] border-y-transparent ml-1"></div>
+                        </div>
+                    </div>
+
+                    <div class="mt-auto">
+                        <div class="relative w-full h-1 bg-white/30 mb-4 group/progress">
+                            <div class="absolute top-0 left-0 h-full bg-red-600 w-[30%]"></div>
+                            <div
+                                class="absolute top-1/2 left-[30%] -translate-y-1/2 w-3 h-3 bg-red-600 rounded-full opacity-0 group-hover/progress:opacity-100 transition-opacity">
+                            </div>
+                        </div>
+
+                        <div class="flex items-center justify-between text-white">
+                            <div class="flex items-center gap-5">
+                                <button class="px-3 py-2 rounded-full hover:scale-150 transition bg-[#0A0A0A]"><img
+                                        src="./Icons/Ps-Icon.png" class="w-5 h-5 invert"></button>
+                                <button class="px-3 py-2 rounded-full hover:scale-150 transition bg-[#0A0A0A]"><img
+                                        src="./Icons/Volume-Icon.png" class="w-5 h-5 invert"></button>
+                                <div class="flex items-center gap-3">
+                                    <span
+                                        class="text-[13px] font-medium px-3 py-2 rounded-full hover:scale-150 transition bg-[#0A0A0A]">0:00
+                                        / 22:48</span>
+                                </div>
+                                <button
+                                    class="text-[13px] font-medium px-3 py-2 rounded-full hover:scale-150 transition bg-[#0A0A0A]">В
+                                    этом видео ></button>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <button class="px-3 py-2 rounded-full hover:scale-150 transition bg-[#0A0A0A]"><img
+                                        src="./Icons/Automatic-Icon.png" class="w-6 h-6 invert"></button>
+                                <button class="px-3 py-2 rounded-full hover:scale-150 transition bg-[#0A0A0A]"><img
+                                        src="./Icons/Sub-Icon.png" class="w-5 h-5 invert"></button>
+                                <button class="px-3 py-2 rounded-full hover:scale-150 transition bg-[#0A0A0A]"><img
+                                        src="./Icons/Settings-Icon.png" class="w-5 h-5 invert"></button>
+                                <button class="px-3 py-2 rounded-full hover:scale-150 transition bg-[#0A0A0A]"><img
+                                        src="./Icons/All-Icon.png" class="w-5 h-5 invert"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/80 to-transparent -z-10">
+                    </div>
+                </div>
+            </div>
+
+            <h1 class="text-2xl font-bold mt-4">ГАЙД НА ИМБУ ОТ ТОП 1 БРУДЫ в ПАТЧЕ 7.40</h1>
+
+            <div class="flex flex-wrap items-center justify-between mt-3 gap-4">
+                <div class="flex items-center gap-3">
+                    <img src="./Icons/Avatars/Mangekyo-Avatar.jpg" class="w-10 h-10 rounded-full">
+                    <div>
+                        <p class="font-bold">mangekyou</p>
+                        <p class="text-xs text-gray-400">15,8 тыс. подписчиков</p>
+                    </div>
+                    <button
+                        class="ml-4 bg-white text-black px-4 py-2 rounded-full text-sm font-bold hover:bg-gray-200 transition">Подписаться</button>
+                </div>
+
+                <div class="flex items-center gap-3 flex-wrap">
+                    <div class="flex items-center bg-[#272727] rounded-full overflow-hidden">
+                        <button
+                            class="flex items-center gap-2 px-4 py-2 hover:bg-[#3f3f3f] border-r border-[#3f3f3f] transition">
+                            <img src="./Icons/Black-Like-Icon.png" class="w-7 h-5 invert">
+                            <span class="text-sm font-medium">1,2 тыс.</span>
+                        </button>
+                        <button class="px-4 py-2 hover:bg-[#3f3f3f] transition">
+                            <img src="./Icons/Black-Dislike-Icon.png" class="w-5 h-5 invert">
+                        </button>
+                    </div>
+
+                    <button
+                        class="flex items-center gap-2 bg-[#272727] px-4 py-2 rounded-full hover:bg-[#3f3f3f] transition">
+                        <img src="./Icons/Share-Icon.png" class="w-5 h-5 invert">
+                        <span class="text-sm font-medium">Поделиться</span>
+                    </button>
+
+                    <button
+                        class="flex items-center gap-2 bg-[#272727] px-4 py-2 rounded-full hover:bg-[#3f3f3f] transition">
+                        <img src="./Icons/Zakladka-Icon.png" class="w-5 h-5 invert">
+                        <span class="text-sm font-medium">Сохранить</span>
+                    </button>
+
+                    <button
+                        class="flex items-center gap-2 bg-[#272727] px-4 py-2 rounded-full hover:bg-[#3f3f3f] transition">
+                        <img src="./Icons/Black-Download-Icon.png" class="w-5 h-5 invert">
+                        <span class="text-sm font-medium">Скачать</span>
+                    </button>
+
+                    <button class="bg-[#272727] p-2 rounded-full hover:bg-[#3f3f3f] transition">
+                        <img src="./Icons/3-dots-black-Icon.png" class="w-5 h-5 invert">
+                    </button>
+                </div>
+            </div>
+
+            <div
+                class="mt-4 p-4 bg-[#272727]/60 rounded-xl text-[14px] leading-relaxed hover:bg-[#272727] transition cursor-pointer">
+                <p class="font-bold mb-1">34 тыс. просмотров 3 месяца назад</p>
+                <p>🎁 ПОПОЛНЯЙ СТИМ И ЗАБИРАЙ ПОДАРКИ - <span
+                        class="text-[#3ea6ff]">https://plrk.co/p/mangekyouNG</span></p>
+                <p>🌲 ПРОМОКОД 0% - MANGEKYOU</p>
+                <button class="font-bold mt-1">...ещё</button>
+            </div>
+
+            <section class="mt-6">
+
+                <div class="flex items-center gap-6 mb-6">
+
+                    <h2 class="text-xl font-bold text-white">100 комментариев</h2>
+
+                    <button class="flex items-center gap-2 text-sm font-bold">
+
+                        <img src="./Icons/Playlist-Icon.png" class="w-6 h-6"> Упорядочить
+
+                    </button>
+
+                </div>
+
+
+
+                <form class="flex gap-4 mb-8">
+
+                    <img src="./Icons/Avatars/Avatar-Icon.png" class="w-10 h-10 rounded-full shrink-0">
+
+                    <input type="text" placeholder="Введите комментарий..."
+                        class="w-full bg-transparent border-b border-[#3f3f3f] focus:border-white outline-none pb-1 text-sm">
+
+                </form>
+
+
+
+                <div class="space-y-6">
+                    <div class="flex gap-4">
+                        <img src="./Icons/Avatars/Mad-Avatar.jpg" class="w-10 h-10 rounded-full shrink-0 bg-blue-500">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 text-xs mb-1">
+                                <span class="font-bold text-white cursor-pointer">@DotaMaster_777</span>
+                                <span class="text-gray-400">2 часа назад</span>
+                            </div>
+                            <p class="text-sm text-gray-100">Лучший гайд на Бруду! Наконец-то кто-то объяснил, как
+                                правильно контрить её в новом патче.</p>
+                            <div class="flex items-center gap-4 mt-2 text-xs text-gray-400">
+                                <button
+                                    class="flex items-center gap-1.5 hover:bg-[#3f3f3f] px-2 py-1 rounded-full transition"><img
+                                        src="./Icons/Black-Like-Icon.png" class="w-7 h-4 invert"> 412</button>
+                                <button
+                                    class="flex items-center gap-1.5 hover:bg-[#3f3f3f] px-2 py-1 rounded-full transition"><img
+                                        src="./Icons/Black-Dislike-Icon.png" class="w-4 h-4 invert"></button>
+                                <span
+                                    class="font-bold text-white hover:bg-[#3f3f3f] px-3 py-1 rounded-full cursor-pointer transition">Ответить</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <img src="./Icons/Avatars/Random1.jpg" class="w-10 h-10 rounded-full shrink-0 bg-purple-600">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 text-xs mb-1">
+                                <span class="font-bold text-white cursor-pointer">@AlexGamer</span>
+                                <span class="text-gray-400">5 часов назад</span>
+                            </div>
+                            <p class="text-sm text-gray-100">А что по билду через фаст орчид? В этом патче он всё ещё
+                                актуален или лучше в радик выходить?</p>
+                            <div class="flex items-center gap-4 mt-2 text-xs text-gray-400">
+                                <button
+                                    class="flex items-center gap-1.5 hover:bg-[#3f3f3f] px-2 py-1 rounded-full transition"><img
+                                        src="./Icons/Black-Like-Icon.png" class="w-7 h-4 invert"> 89</button>
+                                <button
+                                    class="flex items-center gap-1.5 hover:bg-[#3f3f3f] px-2 py-1 rounded-full transition"><img
+                                        src="./Icons/Black-Dislike-Icon.png" class="w-4 h-4 invert"></button>
+                                <span
+                                    class="font-bold text-white hover:bg-[#3f3f3f] px-3 py-1 rounded-full cursor-pointer transition">Ответить</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <img src="./Icons/Avatars/Random2.jpg" class="w-10 h-10 rounded-full shrink-0 bg-green-500">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 text-xs mb-1">
+                                <span class="font-bold text-white cursor-pointer">@Mangekyou_Fan</span>
+                                <span class="text-gray-400">1 день назад</span>
+                            </div>
+                            <p class="text-sm text-gray-100">Обожаю твою подачу! Сделай, пожалуйста, такой же подробный
+                                разбор на Мипо.</p>
+                            <div class="flex items-center gap-4 mt-2 text-xs text-gray-400">
+                                <button
+                                    class="flex items-center gap-1.5 hover:bg-[#3f3f3f] px-2 py-1 rounded-full transition"><img
+                                        src="./Icons/Black-Like-Icon.png" class="w-7 h-4 invert"> 1.2к</button>
+                                <button
+                                    class="flex items-center gap-1.5 hover:bg-[#3f3f3f] px-2 py-1 rounded-full transition"><img
+                                        src="./Icons/Buttons/dislike.png" class="w-4 h-4 invert"></button>
+                                <span
+                                    class="font-bold text-white hover:bg-[#3f3f3f] px-3 py-1 rounded-full cursor-pointer transition">Ответить</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <img src="./Icons/Avatars/Random3.jpg" class="w-10 h-10 rounded-full shrink-0 bg-red-600">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 text-xs mb-1">
+                                <span class="font-bold text-white cursor-pointer">@Kirill_Pro</span>
+                                <span class="text-gray-400">3 дня назад</span>
+                            </div>
+                            <p class="text-sm text-gray-100">Протестил в лобби — работает идеально. Главное не затупить
+                                с таймингом паутины.</p>
+                            <div class="flex items-center gap-4 mt-2 text-xs text-gray-400">
+                                <button
+                                    class="flex items-center gap-1.5 hover:bg-[#3f3f3f] px-2 py-1 rounded-full transition"><img
+                                        src="./Icons/Black-Like-Icon.png" class="w-7 h-4 invert"> 15</button>
+                                <button
+                                    class="flex items-center gap-1.5 hover:bg-[#3f3f3f] px-2 py-1 rounded-full transition"><img
+                                        src="./Icons/Black-Dislike-Icon.png" class="w-4 h-4 invert"></button>
+                                <span
+                                    class="font-bold text-white hover:bg-[#3f3f3f] px-3 py-1 rounded-full cursor-pointer transition">Ответить</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <img src="./Icons/Avatars/Random4.jpg" class="w-10 h-10 rounded-full shrink-0 bg-yellow-500">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 text-xs mb-1">
+                                <span class="font-bold text-white cursor-pointer">@Lina_Queen</span>
+                                <span class="text-gray-400">1 неделю назад</span>
+                            </div>
+                            <p class="text-sm text-gray-100">Вчера против меня такая Бруда попалась, это был кошмар.
+                                Теперь хоть знаю, что контрить.</p>
+                            <div class="flex items-center gap-4 mt-2 text-xs text-gray-400">
+                                <button
+                                    class="flex items-center gap-1.5 hover:bg-[#3f3f3f] px-2 py-1 rounded-full transition"><img
+                                        src="./Icons/Black-Like-Icon.png" class="w-7 h-4 invert"> 56</button>
+                                <button
+                                    class="flex items-center gap-1.5 hover:bg-[#3f3f3f] px-2 py-1 rounded-full transition"><img
+                                        src="./Icons/Black-Dislike-Icon.png" class="w-4 h-4 invert"></button>
+                                <span
+                                    class="font-bold text-white hover:bg-[#3f3f3f] px-3 py-1 rounded-full cursor-pointer transition">Ответить</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <img src="./Icons/Avatars/Random5.jpg" class="w-10 h-10 rounded-full shrink-0 bg-indigo-900">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 text-xs mb-1">
+                                <span class="font-bold text-white cursor-pointer">@SoloPlayer</span>
+                                <span class="text-gray-400">2 недели назад</span>
+                            </div>
+                            <p class="text-sm text-gray-100">Бруда имба, но только если саппорты не стакают лес
+                                противнику. В соло тяжело вытащить.</p>
+                            <div class="flex items-center gap-4 mt-2 text-xs text-gray-400">
+                                <button
+                                    class="flex items-center gap-1.5 hover:bg-[#3f3f3f] px-2 py-1 rounded-full transition"><img
+                                        src="./Icons/Black-Like-Icon.png" class="w-7 h-4 invert"> 204</button>
+                                <button
+                                    class="flex items-center gap-1.5 hover:bg-[#3f3f3f] px-2 py-1 rounded-full transition"><img
+                                        src="./Icons/Black-Dislike-Icon.png" class="w-4 h-4 invert"></button>
+                                <span
+                                    class="font-bold text-white hover:bg-[#3f3f3f] px-3 py-1 rounded-full cursor-pointer transition">Ответить</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <img src="./Icons/Avatars/Random6.jpg" class="w-10 h-10 rounded-full shrink-0 bg-pink-500">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 text-xs mb-1">
+                                <span class="font-bold text-white cursor-pointer">@Cat_Gamer</span>
+                                <span class="text-gray-400">3 недели назад</span>
+                            </div>
+                            <p class="text-sm text-gray-100">Качество видео на высоте, приятно смотреть разборы в 4К.
+                                Лайк за старания!</p>
+                            <div class="flex items-center gap-4 mt-2 text-xs text-gray-400">
+                                <button
+                                    class="flex items-center gap-1.5 hover:bg-[#3f3f3f] px-2 py-1 rounded-full transition"><img
+                                        src="./Icons/Black-Like-Icon.png" class="w-7 h-4 invert"> 45</button>
+                                <button
+                                    class="flex items-center gap-1.5 hover:bg-[#3f3f3f] px-2 py-1 rounded-full transition"><img
+                                        src="./Icons/Black-Dislike-Icon.png" class="w-4 h-4 invert"></button>
+                                <span
+                                    class="font-bold text-white hover:bg-[#3f3f3f] px-3 py-1 rounded-full cursor-pointer transition">Ответить</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <img src="./Icons/Avatars/Random7.jpg" class="w-10 h-10 rounded-full shrink-0 bg-emerald-700">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 text-xs mb-1">
+                                <span class="font-bold text-white cursor-pointer">@Dota_History</span>
+                                <span class="text-gray-400">1 месяц назад</span>
+                            </div>
+                            <p class="text-sm text-gray-100">Помню времена, когда у Бруды был инвиз в паутине... Эх,
+                                ностальгия в глаз попала.</p>
+                            <div class="flex items-center gap-4 mt-2 text-xs text-gray-400">
+                                <button
+                                    class="flex items-center gap-1.5 hover:bg-[#3f3f3f] px-2 py-1 rounded-full transition"><img
+                                        src="./Icons/Black-Like-Icon.png" class="w-7 h-4 invert"> 331</button>
+                                <button
+                                    class="flex items-center gap-1.5 hover:bg-[#3f3f3f] px-2 py-1 rounded-full transition"><img
+                                        src="./Icons/Black-Dislike-Icon.png" class="w-4 h-4 invert"></button>
+                                <span
+                                    class="font-bold text-white hover:bg-[#3f3f3f] px-3 py-1 rounded-full cursor-pointer transition">Ответить</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <img src="./Icons/Avatars/Random8.jpg" class="w-10 h-10 rounded-full shrink-0 bg-orange-600">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 text-xs mb-1">
+                                <span class="font-bold text-white cursor-pointer">@Noob_Master</span>
+                                <span class="text-gray-400">1 месяц назад</span>
+                            </div>
+                            <p class="text-sm text-gray-100">Я один смотрю это в 2026 году? Актуально как никогда!</p>
+                            <div class="flex items-center gap-4 mt-2 text-xs text-gray-400">
+                                <button
+                                    class="flex items-center gap-1.5 hover:bg-[#3f3f3f] px-2 py-1 rounded-full transition"><img
+                                        src="./Icons/Black-Like-Icon.png" class="w-7 h-4 invert"> 12</button>
+                                <button
+                                    class="flex items-center gap-1.5 hover:bg-[#3f3f3f] px-2 py-1 rounded-full transition"><img
+                                        src="./Icons/Black-Dislike-Icon.png" class="w-4 h-4 invert"></button>
+                                <span
+                                    class="font-bold text-white hover:bg-[#3f3f3f] px-3 py-1 rounded-full cursor-pointer transition">Ответить</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <img src="./Icons/Avatars/Random9.jpg" class="w-10 h-10 rounded-full shrink-0 bg-cyan-600">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 text-xs mb-1">
+                                <span class="font-bold text-white cursor-pointer">@Pro_Analytics</span>
+                                <span class="text-gray-400">2 месяца назад</span>
+                            </div>
+                            <p class="text-sm text-gray-100">Разбор по цифрам очень точный. Жду такой же формат по
+                                предметам.</p>
+                            <div class="flex items-center gap-4 mt-2 text-xs text-gray-400">
+                                <button
+                                    class="flex items-center gap-1.5 hover:bg-[#3f3f3f] px-2 py-1 rounded-full transition"><img
+                                        src="./Icons/Black-Like-Icon.png" class="w-7 h-4 invert"> 804</button>
+                                <button
+                                    class="flex items-center gap-1.5 hover:bg-[#3f3f3f] px-2 py-1 rounded-full transition"><img
+                                        src="./Icons/Black-Dislike-Icon.png" class="w-4 h-4 invert"></button>
+                                <span
+                                    class="font-bold text-white hover:bg-[#3f3f3f] px-3 py-1 rounded-full cursor-pointer transition">Ответить</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <img src="./Icons/Avatars/Random10.jpg" class="w-10 h-10 rounded-full shrink-0 bg-cyan-600">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 text-xs mb-1">
+                                <span class="font-bold text-white cursor-pointer">@Pro_Analytics</span>
+                                <span class="text-gray-400">2 месяца назад</span>
+                            </div>
+                            <p class="text-sm text-gray-100">Я рекрут но я играю примерно как ты</p>
+                            <div class="flex items-center gap-4 mt-2 text-xs text-gray-400">
+                                <button
+                                    class="flex items-center gap-1.5 hover:bg-[#3f3f3f] px-2 py-1 rounded-full transition"><img
+                                        src="./Icons/Black-Like-Icon.png" class="w-7 h-4 invert"> 1488</button>
+                                <button
+                                    class="flex items-center gap-1.5 hover:bg-[#3f3f3f] px-2 py-1 rounded-full transition"><img
+                                        src="./Icons/Black-Dislike-Icon.png" class="w-4 h-4 invert"></button>
+                                <span
+                                    class="font-bold text-white hover:bg-[#3f3f3f] px-3 py-1 rounded-full cursor-pointer transition">Ответить</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+        </div>
+        <aside class="lg:w-[30%] mt-8 lg:mt-0">
+
+            <div class="flex gap-2 overflow-x-auto scrollbar-hide pb-4">
+                <button class="bg-white text-black px-3 py-1 rounded-lg text-sm font-medium shrink-0">Все видео</button>
+                <button
+                    class="bg-[#272727] px-3 py-1 rounded-lg text-sm font-medium shrink-0 hover:bg-[#3a3a3a] transition">Автор:
+                    mangekyou</button>
+                <button
+                    class="bg-[#272727] px-3 py-1 rounded-lg text-sm font-medium shrink-0 hover:bg-[#3a3a3a] transition">Dota
+                    2</button>
+                <button
+                    class="bg-[#272727] px-3 py-1 rounded-lg text-sm font-medium shrink-0 hover:bg-[#3a3a3a] transition">Похожий
+                    контент</button>
+                <button
+                    class="bg-[#272727] px-3 py-1 rounded-lg text-sm font-medium shrink-0 hover:bg-[#3a3a3a] transition">Для
+                    вас</button>
+                <button
+                    class="bg-[#272727] px-3 py-1 rounded-lg text-sm font-medium shrink-0 hover:bg-[#3a3a3a] transition">Недавно
+                    опубликованные</button>
+                <button
+                    class="bg-[#272727] px-3 py-1 rounded-lg text-sm font-medium shrink-0 hover:bg-[#3a3a3a] transition">Просмотрено</button>
+            </div>
+
+            <div class="flex flex-col gap-3">
+                <div class="flex gap-3 group cursor-pointer">
+                    <div class="relative shrink-0 w-40 h-24 sm:w-44 sm:h-28">
+                        <img src="./Icons/Watch/Tihon1.jpg"
+                            class="w-full h-full object-cover rounded-xl transition-transform group-hover:scale-[0.98]">
+                        <span
+                            class="absolute bottom-1 right-1 bg-black/80 text-[11px] font-medium px-1.5 rounded">21:49</span>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <h4
+                            class="text-[14px] font-bold line-clamp-2 leading-snug text-gray-100 group-hover:text-white">
+                            1V1 ПРОТИВ ТИКТОКЕРОВ | DEAD BY DAYLIGHT</h4>
+                        <p class="text-[12px] text-gray-400">Тихон Елисеевич</p>
+                        <p class="text-[12px] text-gray-400">57 тыс. просмотров • 8 мес. назад</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-3 group cursor-pointer">
+                    <div class="relative shrink-0 w-40 h-24 sm:w-44 sm:h-28">
+                        <img src="./Icons/Shorts/Mad1.jpg"
+                            class="w-full h-full object-cover rounded-xl transition-transform group-hover:scale-[0.98]">
+                        <span
+                            class="absolute bottom-1 right-1 bg-black/80 text-[11px] font-medium px-1.5 rounded">21:49</span>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <h4
+                            class="text-[14px] font-bold line-clamp-2 leading-snug text-gray-100 group-hover:text-white">
+                            MAD REDUX v1.0 - РЕДУКС КОТОРЫЙ ТЫ ИСКАЛ</h4>
+                        <p class="text-[12px] text-gray-400">Mad</p>
+                        <p class="text-[12px] text-gray-400">11 тыс. просмотров • 8 мес. назад</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-3 group cursor-pointer">
+                    <div class="relative shrink-0 w-40 h-24 sm:w-44 sm:h-28">
+                        <img src="./Icons/Watch/Random3.jpg"
+                            class="w-full h-full object-cover rounded-xl transition-transform group-hover:scale-[0.98]">
+                        <span
+                            class="absolute bottom-1 right-1 bg-black/80 text-[11px] font-medium px-1.5 rounded">21:49</span>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <h4
+                            class="text-[14px] font-bold line-clamp-2 leading-snug text-gray-100 group-hover:text-white">
+                            Low cortisool playlist</h4>
+                        <p class="text-[12px] text-gray-400">newspace22</p>
+                        <p class="text-[12px] text-gray-400">67 тыс. просмотров • 1 нед. назад</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-3 group cursor-pointer">
+                    <div class="relative shrink-0 w-40 h-24 sm:w-44 sm:h-28">
+                        <img src="./Icons/Watch/Dbd1.jpg"
+                            class="w-full h-full object-cover rounded-xl transition-transform group-hover:scale-[0.98]">
+                        <span
+                            class="absolute bottom-1 right-1 bg-black/80 text-[11px] font-medium px-1.5 rounded">21:49</span>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <h4
+                            class="text-[14px] font-bold line-clamp-2 leading-snug text-gray-100 group-hover:text-white">
+                            Confession of a Nurse Main</h4>
+                        <p class="text-[12px] text-gray-400">DBD Things</p>
+                        <p class="text-[12px] text-gray-400">553 тыс. просмотров • 3 года назад</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-3 group cursor-pointer">
+                    <div class="relative shrink-0 w-40 h-24 sm:w-44 sm:h-28">
+                        <img src="./Icons/Watch/Random5.jpg"
+                            class="w-full h-full object-cover rounded-xl transition-transform group-hover:scale-[0.98]">
+                        <span
+                            class="absolute bottom-1 right-1 bg-black/80 text-[11px] font-medium px-1.5 rounded">21:49</span>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <h4
+                            class="text-[14px] font-bold line-clamp-2 leading-snug text-gray-100 group-hover:text-white">
+                        ПУСТОЙ ВОКЗАЛ</h4>
+                        <p class="text-[12px] text-gray-400">MORGENSHTERN</p>
+                        <p class="text-[12px] text-gray-400">5,5 млн. просмотров • 8 год. назад</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-3 group cursor-pointer">
+                    <div class="relative shrink-0 w-40 h-24 sm:w-44 sm:h-28">
+                        <img src="./Icons/Watch/Golovach1.jpg"
+                            class="w-full h-full object-cover rounded-xl transition-transform group-hover:scale-[0.98]">
+                        <span
+                            class="absolute bottom-1 right-1 bg-black/80 text-[11px] font-medium px-1.5 rounded">21:49</span>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <h4
+                            class="text-[14px] font-bold line-clamp-2 leading-snug text-gray-100 group-hover:text-white">
+                            ЕМУ СНОВА ОТКЛЮЧИЛИ ВОЙС</h4>
+                        <p class="text-[12px] text-gray-400">LenaGolovach Best Moments</p>
+                        <p class="text-[12px] text-gray-400">8,3 тыс. просмотров • 11 дней назад</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-3 group cursor-pointer">
+                    <div class="relative shrink-0 w-40 h-24 sm:w-44 sm:h-28">
+                        <img src="./Icons/Watch/ez25_1.jpg"
+                            class="w-full h-full object-cover rounded-xl transition-transform group-hover:scale-[0.98]">
+                        <span
+                            class="absolute bottom-1 right-1 bg-black/80 text-[11px] font-medium px-1.5 rounded">21:49</span>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <h4
+                            class="text-[14px] font-bold line-clamp-2 leading-snug text-gray-100 group-hover:text-white">
+                            НАЙС ИГРАЕШЬ — ГОЛОВАЧ</h4>
+                        <p class="text-[12px] text-gray-400">EZ 25</p>
+                        <p class="text-[12px] text-gray-400">842 тыс. просмотров • 2 мес. назад</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-3 group cursor-pointer">
+                    <div class="relative shrink-0 w-40 h-24 sm:w-44 sm:h-28">
+                        <img src="./Icons/Watch/Random8.jpg"
+                            class="w-full h-full object-cover rounded-xl transition-transform group-hover:scale-[0.98]">
+                        <span
+                            class="absolute bottom-1 right-1 bg-black/80 text-[11px] font-medium px-1.5 rounded">21:49</span>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <h4
+                            class="text-[14px] font-bold line-clamp-2 leading-snug text-gray-100 group-hover:text-white">
+                            Сэр, да сэр</h4>
+                        <p class="text-[12px] text-gray-400">Антон Чигур</p>
+                        <p class="text-[12px] text-gray-400">1,5 тыс. просмотров • 10 мес. назад</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-3 group cursor-pointer">
+                    <div class="relative shrink-0 w-40 h-24 sm:w-44 sm:h-28">
+                        <img src="./Icons/Watch/Borat1.png"
+                            class="w-full h-full object-cover rounded-xl transition-transform group-hover:scale-[0.98]">
+                        <span
+                            class="absolute bottom-1 right-1 bg-black/80 text-[11px] font-medium px-1.5 rounded">21:49</span>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <h4
+                            class="text-[14px] font-bold line-clamp-2 leading-snug text-gray-100 group-hover:text-white">
+                            Борат в Resident Evil 4</h4>
+                        <p class="text-[12px] text-gray-400">eli_handle_b.wav</p>
+                        <p class="text-[12px] text-gray-400">57 тыс. просмотров • 8 мес. назад</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-3 group cursor-pointer">
+                    <div class="relative shrink-0 w-40 h-24 sm:w-44 sm:h-28">
+                        <img src="./Icons/Watch/Random9.jpg"
+                            class="w-full h-full object-cover rounded-xl transition-transform group-hover:scale-[0.98]">
+                        <span
+                            class="absolute bottom-1 right-1 bg-black/80 text-[11px] font-medium px-1.5 rounded">21:49</span>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <h4
+                            class="text-[14px] font-bold line-clamp-2 leading-snug text-gray-100 group-hover:text-white">
+                            Как я играл в Resident Evil Requiem</h4>
+                        <p class="text-[12px] text-gray-400">Нарратор</p>
+                        <p class="text-[12px] text-gray-400">742 тыс. просмотров • 3 нед. назад</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-3 group cursor-pointer">
+                    <div class="relative shrink-0 w-40 h-24 sm:w-44 sm:h-28">
+                        <img src="./Icons/Watch/laugh1.jpg"
+                            class="w-full h-full object-cover rounded-xl transition-transform group-hover:scale-[0.98]">
+                        <span
+                            class="absolute bottom-1 right-1 bg-black/80 text-[11px] font-medium px-1.5 rounded">21:49</span>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <h4
+                            class="text-[14px] font-bold line-clamp-2 leading-snug text-gray-100 group-hover:text-white">
+                            you laugh, you lose</h4>
+                        <p class="text-[12px] text-gray-400">Venom</p>
+                        <p class="text-[12px] text-gray-400">7 тыс. просмотров • 3 мес. назад</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-3 group cursor-pointer">
+                    <div class="relative shrink-0 w-40 h-24 sm:w-44 sm:h-28">
+                        <img src="./Icons/Watch/Random1.jpg"
+                            class="w-full h-full object-cover rounded-xl transition-transform group-hover:scale-[0.98]">
+                        <span
+                            class="absolute bottom-1 right-1 bg-black/80 text-[11px] font-medium px-1.5 rounded">21:49</span>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <h4
+                            class="text-[14px] font-bold line-clamp-2 leading-snug text-gray-100 group-hover:text-white">
+                            P100 Wraith Can Not Be Stopped /// Dead By Daylight</h4>
+                        <p class="text-[12px] text-gray-400">The True Neoteric</p>
+                        <p class="text-[12px] text-gray-400">227 просмотров • 1 дн. назад</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-3 group cursor-pointer">
+                    <div class="relative shrink-0 w-40 h-24 sm:w-44 sm:h-28">
+                        <img src="./Icons/Watch/Random2.jpg"
+                            class="w-full h-full object-cover rounded-xl transition-transform group-hover:scale-[0.98]">
+                        <span
+                            class="absolute bottom-1 right-1 bg-black/80 text-[11px] font-medium px-1.5 rounded">21:49</span>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <h4
+                            class="text-[14px] font-bold line-clamp-2 leading-snug text-gray-100 group-hover:text-white">
+                            you laugh, you lose</h4>
+                        <p class="text-[12px] text-gray-400">Venom</p>
+                        <p class="text-[12px] text-gray-400">57 тыс. просмотров • 8 мес. назад</p>
+                    </div>
+                </div>
+                <div class="flex gap-3 group cursor-pointer">
+                    <div class="relative shrink-0 w-40 h-24 sm:w-44 sm:h-28">
+                        <img src="./Icons/Watch/Random6.jpg"
+                            class="w-full h-full object-cover rounded-xl transition-transform group-hover:scale-[0.98]">
+                        <span
+                            class="absolute bottom-1 right-1 bg-black/80 text-[11px] font-medium px-1.5 rounded">21:49</span>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <h4
+                            class="text-[14px] font-bold line-clamp-2 leading-snug text-gray-100 group-hover:text-white">
+                            БИЛД, КОТОРЫЙ НЕ ВЫВЕЗ ДАЖЕ ЛЕГИОН... | DEAD BY DAYLIGHT</h4>
+                        <p class="text-[12px] text-gray-400">Тихон Елисеевич</p>
+                        <p class="text-[12px] text-gray-400">74 тыс. просмотров • 8 мес. назад</p>
+                    </div>
+                </div>
+                <div class="flex gap-3 group cursor-pointer">
+                    <div class="relative shrink-0 w-40 h-24 sm:w-44 sm:h-28">
+                        <img src="./Icons/Watch/Quiz1.jpg"
+                            class="w-full h-full object-cover rounded-xl transition-transform group-hover:scale-[0.98]">
+                        <span
+                            class="absolute bottom-1 right-1 bg-black/80 text-[11px] font-medium px-1.5 rounded">21:49</span>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <h4
+                            class="text-[14px] font-bold line-clamp-2 leading-snug text-gray-100 group-hover:text-white">
+                            Guess the Horror Movie</h4>
+                        <p class="text-[12px] text-gray-400">Fun QUiz Questions</p>
+                        <p class="text-[12px] text-gray-400">949 тыс. просмотров • 1 год назад</p>
+                    </div>
+                </div>
+                <div class="flex gap-3 group cursor-pointer">
+                    <div class="relative shrink-0 w-40 h-24 sm:w-44 sm:h-28">
+                        <img src="./Icons/Watch/Random4.jpg"
+                            class="w-full h-full object-cover rounded-xl transition-transform group-hover:scale-[0.98]">
+                        <span
+                            class="absolute bottom-1 right-1 bg-black/80 text-[11px] font-medium px-1.5 rounded">21:49</span>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <h4
+                            class="text-[14px] font-bold line-clamp-2 leading-snug text-gray-100 group-hover:text-white">
+                            Искусство Депа</h4>
+                        <p class="text-[12px] text-gray-400">Огр</p>
+                        <p class="text-[12px] text-gray-400">126 тыс. просмотров • 10 мес. назад</p>
+                    </div>
+                </div>
+                <div class="flex gap-3 group cursor-pointer">
+                    <div class="relative shrink-0 w-40 h-24 sm:w-44 sm:h-28">
+                        <img src="./Icons/Watch/Res3.png"
+                            class="w-full h-full object-cover rounded-xl transition-transform group-hover:scale-[0.98]">
+                        <span
+                            class="absolute bottom-1 right-1 bg-black/80 text-[11px] font-medium px-1.5 rounded">21:49</span>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <h4
+                            class="text-[14px] font-bold line-clamp-2 leading-snug text-gray-100 group-hover:text-white">
+                            Как я играл в Resident Evil 3 (2020)</h4>
+                        <p class="text-[12px] text-gray-400">Нарратор</p>
+                        <p class="text-[12px] text-gray-400">1,5 млн. просмотров • 2 г. назад</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+</body>
+
+</html>
