@@ -37,7 +37,7 @@
     </style>
 </head>
 
-<body class="text-white font-[Roboto,Arial,sans-serif] pb-20 md:pb-0">
+<body class="bg-[#0F0F0F] text-white font-[Roboto,Arial,sans-serif]">
 
     <header
         class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 py-2 bg-[#0F0F0F]/95 backdrop-blur-md">
@@ -53,16 +53,19 @@
 
         <div class="flex-1 max-w-[720px] px-4 flex items-center gap-2 justify-center">
             <form class="flex w-full max-w-2xl">
-                <input type="text" placeholder="Введите запрос"
-                    class="w-full bg-[#121212] border border-[#303030] px-4 py-2 rounded-l-full outline-none focus:border-blue-500">
-                <button class="px-3 py-2 border border-[#333333] border-l-0 bg-[#121212] cursor-pointer">
-                    <img src="./Icons/Keyboard-Icon.png" alt="keyboard" class="w-5 h-5">
-                </button>
+                <div class="flex w-full relative">
+                    <input type="text" placeholder="Введите запрос"
+                        class="w-full bg-[#121212] border border-[#303030] px-4 py-2 rounded-l-full outline-none focus:border-blue-500">
+                    <button type="button"
+                        class="absolute right-2 top-1/2 -translate-y-1/2 p-1 hover:bg-[#272727] rounded-full">
+                        <img src="./Icons/Keyboard-Icon.png" alt="keyboard" class="w-5 h-5">
+                    </button>
+                </div>
                 <button class="bg-[#272727] px-5 border border-l-0 border-[#303030] rounded-r-full hover:bg-[#3a3a3a]">
                     <img src="./Icons/Magnifying-Glass-Icon.png" class="w-5 h-5">
                 </button>
             </form>
-            <button class="bg-[#272727] p-2.5 rounded-full hover:bg-[#3a3a3a] hidden sm:block">
+            <button class="bg-[#272727] p-2.5 rounded-full hover:bg-[#3a3a3a] hidden sm:block ml-2">
                 <img src="./Icons/Micro-Icon.png" class="w-5 h-5">
             </button>
         </div>
