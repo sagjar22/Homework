@@ -1,0 +1,29 @@
+.product-card {
+  padding: $spacer;
+  border: 1px solid $secondary;
+  border-radius: 10px;
+  width: 250px;
+
+  img {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  h3 {
+    margin: $spacer 0;
+  }
+
+  .price {
+    color: $success;
+    font-weight: bold;
+  }
+
+  .btn {
+    margin-top: $spacer;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
+  }
+}
